@@ -81,7 +81,7 @@ const TimelineNode = ({ event, index }) => {
       {/* Center Node (Icon) */}
       <motion.div
         style={{ opacity }}
-        className="absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-[var(--bg)] flex items-center justify-center z-20 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+        className="absolute top-0 md:top-auto left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-[var(--bg)] flex items-center justify-center z-30 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
         // Ensure the node sits perfectly on top of the line
         initial={{ background: "var(--surface)" }}
         whileInView={{ background: "var(--color-primary)" }}
@@ -97,7 +97,7 @@ const TimelineNode = ({ event, index }) => {
       {/* Card Content */}
       <motion.div
         style={{ opacity, x }}
-        className={`w-full md:w-1/2 flex ${isEven ? "md:justify-end md:pr-16" : "md:justify-start md:pl-16"} justify-center mt-12 md:mt-0`}
+        className={`w-full md:w-1/2 flex ${isEven ? "md:justify-end md:pr-16" : "md:justify-start md:pl-16"} justify-center mt-20 md:mt-0`}
       >
         <div
           className="relative group rounded-2xl p-6 sm:p-8 w-full max-w-md"
