@@ -56,13 +56,7 @@ const Layout = () => {
               >
                 Contact
               </Link>
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-[var(--surface)] hover:text-[var(--color-orange)] transition-colors"
-                aria-label="Toggle theme"
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+             
             </div>
 
             {/* Mobile Menu Button */}
