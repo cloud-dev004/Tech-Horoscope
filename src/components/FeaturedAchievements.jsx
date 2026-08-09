@@ -6,13 +6,13 @@ const achievements = [
   {
     id: 1,
     label: "Projects Completed",
-    value: 5,
+    value: 3,
     suffix: "+",
     icon: Briefcase,
   },
   { id: 2, label: "Technologies", value: 6, suffix: "+", icon: Cpu },
 
-  { id: 4, label: "Repositories", value: 10, suffix: "+", icon: GitCommit },
+  { id: 4, label: "Repositories", value: 6, suffix: "+", icon: GitCommit },
   { id: 5, label: "Dedication", value: 100, suffix: "%", icon: Heart },
 ];
 
