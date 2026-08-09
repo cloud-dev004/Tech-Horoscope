@@ -39,6 +39,7 @@ const PROJECTS = [
     liveUrl: "#",
     githubUrl: "https://github.com/cloud-dev004/locallens",
   },
+  
 ];
 
 /* ─────────────────────────── CARD ─────────────────────────── */

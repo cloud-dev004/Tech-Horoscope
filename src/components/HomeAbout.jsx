@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, Layers, User } from "lucide-react";
-import profileScrolledImg from "../assets/profile4png.png";
+import profileScrolledImg from "../assets/profile5.png";
 
 /* ─────────────────────────────────────────────────────────── */
 /*  DATA                                                       */

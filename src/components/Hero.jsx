@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import profileScrolledImg from "../assets/profile_entry.png";
+import profileScrolledImg from "../assets/potrait.png";
 
 const Hero = () => {
   const containerRef = useRef(null);
