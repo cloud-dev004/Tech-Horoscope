@@ -71,10 +71,10 @@ const Footer = () => {
               to="/"
               className="text-2xl font-bold font-heading text-[var(--color-primary)] tracking-wide"
             >
-             Manikandan
+              Manikandan
             </Link>
             <p className="text-[var(--text-secondary)] leading-relaxed max-w-xs text-sm">
-               Tech Horoscope
+              Tech Horoscope
             </p>
           </motion.div>
 
@@ -90,7 +90,7 @@ const Footer = () => {
             </h4>
             <div className="grid grid-cols-2 gap-x-12 gap-y-3">
               <FooterLink to="/about" label="About" />
-            
+
               <FooterLink to="/contact" label="Contact" />
             </div>
           </motion.div>
@@ -112,11 +112,11 @@ const Footer = () => {
                 label="GitHub"
               />
               <SocialIcon
-                href="https://www.linkedin.com/in/peratchi-manikandan-672454383/"
+                href="https://www.linkedin.com/in/peratchim"
                 icon={Linkedin}
                 label="LinkedIn"
               />
-              
+
               <SocialIcon href="/PERATCHI_MANIKANDAN_M.pdf" icon={FileText} label="Resume" />
             </div>
           </motion.div>
@@ -129,7 +129,7 @@ const Footer = () => {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-secondary)] font-medium tracking-wide"
         >
-          
+
           <p>
             Designed &amp; Developed by{" "}
             <span className="text-[var(--text-primary)]">
