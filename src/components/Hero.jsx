@@ -18,15 +18,8 @@ const Hero = () => {
   // Darken background gradient by reducing the opacity of the glow layers
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  // Portrait (Right)
-  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.35]);
+  // Portrait (Right) — only vertical translate on scroll, no zoom/fade/blur
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const portraitOpacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
-  const portraitBlur = useTransform(
-    scrollYProgress,
-    [0, 0.9],
-    ["blur(0px)", "blur(8px)"],
-  );
 
   // Text (Left)
   const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
@@ -169,12 +162,7 @@ const Hero = () => {
             >
               <motion.div
                 className="relative w-72 sm:w-80 md:w-[22rem] group"
-                style={{
-                  scale: portraitScale,
-                  y: portraitY,
-                  opacity: portraitOpacity,
-                  filter: portraitBlur,
-                }}
+                style={{ y: portraitY }}
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="absolute -inset-[3px] rounded-3xl bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary)]/40 to-[var(--color-accent)] opacity-70 blur-[1px] transition-opacity duration-300 group-hover:opacity-100" />
