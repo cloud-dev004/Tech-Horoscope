@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import profileScrolledImg from "../assets/potrait.png";
+import profileScrolledImg from "../assets/profile9.webp";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -103,7 +103,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                Full-Stack Developer &amp; Cloud Engineer
+                Full-Stack Developer &amp; Cloud Enthusiast
               </motion.p>
               <motion.h1
                 className="font-bold leading-[1.08]"
@@ -112,11 +112,11 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.68, ease: "easeOut" }}
               >
-                Building{" "}
+                Learning{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)]">
-                  Digital
+                  Building
                 </span>{" "}
-                Experiences.
+                Shipping
               </motion.h1>
               <motion.p
                 className="text-[var(--text-secondary)] max-w-lg leading-relaxed"
@@ -125,8 +125,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.76, ease: "easeOut" }}
               >
-                I specialize in creating premium, high-performance web
-                applications using MERN Stack &amp; Cloud Technologies.
+                Curious enough to keep learning. Crazy enough to keep building
               </motion.p>
             </div>
 
@@ -182,6 +181,8 @@ const Hero = () => {
                 <img
                   src={profileScrolledImg}
                   alt="Profile with developer stats"
+                  width={945}
+                  height={1260}
                   className="relative w-full rounded-3xl"
                 />
               </motion.div>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import profileEntryImg from "../assets/profile3.png";
+import profileEntryImg from "../assets/profile3.webp";
 
 const TypewriterHeading = ({ text, startDelay }) => {
   let charIndex = 0;
@@ -133,6 +133,8 @@ const CoverSection = () => {
           <img
             src={profileEntryImg}
             alt="Profile"
+            width={500}
+            height={500}
             className="w-[clamp(180px,35vw,420px)] xl:w-auto xl:max-h-[80vh] object-contain select-none pointer-events-none"
             style={{
               filter:

@@ -5,8 +5,8 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import Uyir from "../assets/Uyir.png";
-import stocksense from "../assets/stocksense.png";
+import Uyir from "../assets/Uyir.webp";
+import stocksense from "../assets/stocksense.webp";
 /* ─────────────────────────── DATA ─────────────────────────── */
 const PROJECTS = [
   {
@@ -14,6 +14,8 @@ const PROJECTS = [
     title: "StockSense",
     description: "Cloud-Based Smart Inventory Management System",
     image: stocksense,
+    imgWidth: 1534,
+    imgHeight: 897,
     tags: ["React", "Flask", "MySQL", "AWS", "REST API", "AWS RDS"],
     liveUrl: "#",
     githubUrl: "https://github.com/cloud-dev004/Stocksense",
@@ -24,6 +26,8 @@ const PROJECTS = [
     description:
       "Connecting communities to rescue, track, and care for animals through one digital platform.",
     image: Uyir,
+    imgWidth: 1897,
+    imgHeight: 900,
     tags: ["React.js", "MongoDB", "Express.js", "Node.js"],
     liveUrl: "https://uyir-animal-rescue-platform.netlify.app/",
     githubUrl: "https://github.com/cloud-dev004/uyir-animal-rescue-system",
@@ -35,11 +39,12 @@ const PROJECTS = [
       "Helping users discover nearby businesses and essential services through a location-aware digital platform.",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1400&auto=format&fit=crop",
+    imgWidth: 1400,
+    imgHeight: 933,
     tags: ["JS", "HTML", "CSS"],
     liveUrl: "#",
     githubUrl: "https://github.com/cloud-dev004/locallens",
   },
-  
 ];
 
 /* ─────────────────────────── CARD ─────────────────────────── */
@@ -67,7 +72,6 @@ const Card = ({ project, index, total, offset }) => {
         zIndex: isActive ? 20 : 10,
         transition:
           "transform 0.65s cubic-bezier(0.77,0,0.175,1), opacity 0.65s ease, filter 0.65s ease, box-shadow 0.65s ease",
-        willChange: "transform, opacity, filter",
         pointerEvents: isActive ? "auto" : "none",
         borderRadius: 28,
         overflow: "hidden",
@@ -94,6 +98,8 @@ const Card = ({ project, index, total, offset }) => {
           src={project.image}
           alt={project.title}
           loading="lazy"
+          width={project.imgWidth}
+          height={project.imgHeight}
           style={{
             width: "100%",
             height: "100%",

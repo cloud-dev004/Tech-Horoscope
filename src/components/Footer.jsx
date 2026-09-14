@@ -74,7 +74,7 @@ const Footer = () => {
               Manikandan
             </Link>
             <p className="text-[var(--text-secondary)] leading-relaxed max-w-xs text-sm">
-              Tech Horoscope
+              Dev
             </p>
           </motion.div>
 
@@ -112,7 +112,7 @@ const Footer = () => {
                 label="GitHub"
               />
               <SocialIcon
-                href="https://www.linkedin.com/in/peratchim"
+                href="https://linkedin.com/in/peratchim"
                 icon={Linkedin}
                 label="LinkedIn"
               />

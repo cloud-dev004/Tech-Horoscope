@@ -88,7 +88,7 @@ const TimelineNode = ({ event, index }) => {
         viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
         transition={{ duration: 0.5 }}
       >
-        <Icon size={18} className="text-white" />
+        <Icon size={18} className="text-white" loding="lazy"/>
       </motion.div>
 
       {/* Spacer for symmetry on Desktop */}

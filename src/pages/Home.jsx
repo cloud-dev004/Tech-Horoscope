@@ -1,12 +1,20 @@
+import { lazy, Suspense } from "react";
 import Hero from "../components/Hero";
 import ScrollARTransition from "../components/ScrollARTransition";
 import HomeAbout from "../components/HomeAbout";
-import FeaturedProjects from "../components/FeaturedProjects";
-import TechStack from "../components/TechStack";
-import DevelopmentPhilosophy from "../components/DevelopmentPhilosophy";
-import ExperienceTimeline from "../components/ExperienceTimeline";
-import FeaturedAchievements from "../components/FeaturedAchievements";
-import CTA from "../components/CTA";
+
+// ── Below-the-fold: lazy-loaded so they are excluded from the initial bundle ──
+const TechStack = lazy(() => import("../components/TechStack"));
+const FeaturedProjects = lazy(() => import("../components/FeaturedProjects"));
+const DevelopmentPhilosophy = lazy(() => import("../components/DevelopmentPhilosophy"));
+const ExperienceTimeline = lazy(() => import("../components/ExperienceTimeline"));
+const FeaturedAchievements = lazy(() => import("../components/FeaturedAchievements"));
+const CTA = lazy(() => import("../components/CTA"));
+
+// Minimal, invisible height-reservation skeletons — prevent CLS while chunks load.
+const Skeleton = ({ height }) => (
+  <div style={{ minHeight: height, width: "100%" }} aria-hidden="true" />
+);
 
 const Home = () => {
   return (
@@ -17,14 +25,31 @@ const Home = () => {
         <ScrollARTransition />
         <HomeAbout />
       </div>
-      <TechStack />
-      {/* FeaturedProjects needs full width (100vw) */}
-      <FeaturedProjects />
 
-      <DevelopmentPhilosophy />
-      <ExperienceTimeline />
-      <FeaturedAchievements />
-      <CTA />
+      <Suspense fallback={<Skeleton height="600px" />}>
+        <TechStack />
+      </Suspense>
+
+      {/* FeaturedProjects needs full width (100vw) */}
+      <Suspense fallback={<Skeleton height="100vh" />}>
+        <FeaturedProjects />
+      </Suspense>
+
+      <Suspense fallback={<Skeleton height="500px" />}>
+        <DevelopmentPhilosophy />
+      </Suspense>
+
+      <Suspense fallback={<Skeleton height="700px" />}>
+        <ExperienceTimeline />
+      </Suspense>
+
+      <Suspense fallback={<Skeleton height="400px" />}>
+        <FeaturedAchievements />
+      </Suspense>
+
+      <Suspense fallback={<Skeleton height="300px" />}>
+        <CTA />
+      </Suspense>
     </div>
   );
 };

@@ -46,16 +46,16 @@ const TECHNOLOGIES = [
     name: "MongoDB",
     url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
   },
-  {
-    id: "docker",
-    name: "Docker",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  },
-  {
-    id: "git",
-    name: "Git",
-    url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-  },
+  // {
+  //   id: "docker",
+  //   name: "Docker",
+  //   url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+  // },
+  // {
+  //   id: "git",
+  //   name: "Git",
+  //   url: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  // },
   {
     id: "github",
     name: "GitHub",
@@ -235,6 +235,8 @@ const TechCard = ({
         <img
           src={tech.url}
           alt={tech.name}
+          width={90}
+          height={90}
           style={{
             width: "100%",
             height: "100%",

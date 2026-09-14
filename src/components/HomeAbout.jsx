@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, Layers, User } from "lucide-react";
-import profileScrolledImg from "../assets/profile5.png";
+import profileScrolledImg from "../assets/profile7.webp";
 
 /* ─────────────────────────────────────────────────────────── */
 /*  DATA                                                       */
@@ -20,7 +20,7 @@ const cards = [
     icon: User,
     iconColor: "#f97316",
     title: "Who I Am",
-    body: "A passionate Full-Stack Developer & Cloud Engineer from India, crafting high-performance digital experiences that merge elegant design with robust engineering.",
+    body: "I’m someone who learns best by getting hands-on — experimenting, building, breaking things, and figuring out how to make them work",
     accentFrom: "#f97316",
     accentTo: "#fb923c",
   },
@@ -30,7 +30,7 @@ const cards = [
     icon: Layers,
     iconColor: "#06b6d4",
     title: "What I Do",
-    body: "I architect and build end-to-end web applications — from pixel-perfect UIs to scalable cloud infrastructure — delivering premium products that solve real problems.",
+    body: "I turn ideas into working applications by building the frontend, backend, database, and everything in between.",
     accentFrom: "#06b6d4",
     accentTo: "#22d3ee",
   },
@@ -240,6 +240,8 @@ const HomeAbout = () => {
                 <img
                   src={profileScrolledImg}
                   alt="Peratchi Manikandan — Full-Stack Developer"
+                  width={1025}
+                  height={1537}
                   className="w-full rounded-3xl object-cover"
                 />
               </motion.div>
@@ -278,11 +280,8 @@ const HomeAbout = () => {
               </span>
             </h2>
 
-            <p className="text-base md:text-lg leading-relaxed text-[var(--text-secondary)] max-w-lg">
-              A Full-Stack Developer &amp; Cloud Engineer who transforms complex
-              ideas into premium digital experiences. Specializing in the MERN
-              stack with a passion for performance, design, and cloud-native
-              architecture.
+            <p className="text-xs md:text-sm leading-relaxed tracking-widest uppercase text-[var(--text-secondary)] max-w-lg">
+              I like taking an idea, breaking it down, writing the code, and seeing it become something real.
             </p>
 
             {/* CTA */}

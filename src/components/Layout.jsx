@@ -38,7 +38,7 @@ const Layout = () => {
               to="/"
               className="text-xl font-bold font-heading text-[var(--color-primary)]"
             >
-              Tech Horoscope
+              Manikandan.Dev
             </Link>
 
             {/* Desktop Navigation */}
