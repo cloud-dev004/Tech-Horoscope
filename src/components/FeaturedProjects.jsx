@@ -65,7 +65,7 @@ const Card = ({ project, index, total, offset }) => {
         top: "50%",
         left: "50%",
         width: "clamp(300px, 63vw, 860px)",
-        height: "clamp(200px, 50vh, 440px)",
+        height: "auto",
         transform: `translate(${tx}, -50%) scale(${scale})`,
         opacity,
         filter: blur ? `blur(${blur}px)` : "none",
@@ -77,10 +77,10 @@ const Card = ({ project, index, total, offset }) => {
         overflow: "hidden",
         background: "var(--surface)",
         border: isActive
-          ? "2px solid rgba(249,115,22,0.75)"
+          ? "2px solid rgba(197, 163, 255,0.75)"
           : "1px solid rgba(255,255,255,0.06)",
         boxShadow: isActive
-          ? "0 0 0 1px rgba(249,115,22,0.15), 0 0 70px rgba(249,115,22,0.22), 0 28px 80px rgba(0,0,0,0.75)"
+          ? "0 0 0 1px rgba(197, 163, 255,0.15), 0 0 70px rgba(197, 163, 255,0.22), 0 28px 80px rgba(0,0,0,0.75)"
           : "0 16px 48px rgba(0,0,0,0.55)",
         display: "flex",
       }}
@@ -132,12 +132,11 @@ const Card = ({ project, index, total, offset }) => {
       <div
         style={{
           flex: 1,
-          padding:
-            "clamp(1rem, 3vh, 2rem) clamp(1rem, 2.5vw, 2rem) clamp(1rem, 3vh, 2rem) clamp(0.5rem, 1.5vw, 1.25rem)",
+          padding: "20px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          gap: "clamp(0.5rem, 1.5vh, 1rem)",
+          gap: "12px",
           overflow: "hidden",
         }}
       >
@@ -238,7 +237,7 @@ const Card = ({ project, index, total, offset }) => {
             href={project.liveUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:scale-105 active:scale-95 hover:shadow-[0_0_22px_rgba(249,115,22,0.5)]"
+            className="hover:scale-105 active:scale-95 hover:shadow-[0_0_22px_rgba(197, 163, 255,0.5)]"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -405,7 +404,7 @@ const FeaturedProjects = () => {
             width: "65vw",
             height: "65vw",
             background:
-              "radial-gradient(circle, rgba(249,115,22,0.13) 0%, transparent 68%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.13) 0%, transparent 68%)",
             filter: "blur(50px)",
           }}
         />
@@ -433,7 +432,7 @@ const FeaturedProjects = () => {
             style={{
               height: 1,
               width: "clamp(18px, 3vw, 48px)",
-              background: "rgba(249,115,22,0.5)",
+              background: "rgba(197, 163, 255,0.5)",
             }}
           />
           <span
@@ -451,7 +450,7 @@ const FeaturedProjects = () => {
             style={{
               height: 1,
               width: "clamp(18px, 3vw, 48px)",
-              background: "rgba(249,115,22,0.5)",
+              background: "rgba(197, 163, 255,0.5)",
             }}
           />
         </div>
@@ -519,7 +518,7 @@ const FeaturedProjects = () => {
           }}
           onMouseEnter={(e) => {
             if (active !== 0)
-              e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)";
+              e.currentTarget.style.borderColor = "rgba(197, 163, 255,0.5)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
@@ -554,7 +553,7 @@ const FeaturedProjects = () => {
           }}
           onMouseEnter={(e) => {
             if (active !== total - 1)
-              e.currentTarget.style.borderColor = "rgba(249,115,22,0.5)";
+              e.currentTarget.style.borderColor = "rgba(197, 163, 255,0.5)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
@@ -642,7 +641,7 @@ const FeaturedProjects = () => {
                     ? "var(--color-primary)"
                     : "rgba(255,255,255,0.2)",
                 boxShadow:
-                  i === active ? "0 0 10px rgba(249,115,22,0.55)" : "none",
+                  i === active ? "0 0 10px rgba(197, 163, 255,0.55)" : "none",
                 transition: "all 0.45s ease",
               }}
             />

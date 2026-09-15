@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import profileScrolledImg from "../assets/profile9.webp";
+import profileScrolledImg from "../assets/profile7.webp";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -53,7 +53,7 @@ const Hero = () => {
               className="absolute top-1/2 left-2/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 65%)",
+                  "radial-gradient(circle, rgba(197, 163, 255,0.12) 0%, transparent 65%)",
                 opacity: glowOpacity,
               }}
             />
@@ -130,7 +130,7 @@ const Hero = () => {
             >
               <Link
                 to="/projects"
-                className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-7 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(249,115,22,0.35)] hover:shadow-[0_0_30px_rgba(249,115,22,0.55)] active:scale-95 min-h-[44px] min-w-[140px]"
+                className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-7 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(197, 163, 255,0.35)] hover:shadow-[0_0_30px_rgba(197, 163, 255,0.55)] active:scale-95 min-h-[44px] min-w-[140px]"
               >
                 View Projects
                 <ArrowRight
@@ -161,17 +161,16 @@ const Hero = () => {
               }}
             >
               <motion.div
-                className="relative w-72 sm:w-80 md:w-[22rem] group"
+                className="relative w-[240px] aspect-[9/16] sm:w-[320px] lg:w-[400px] shrink-0 group"
                 style={{ y: portraitY }}
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="absolute -inset-[3px] rounded-3xl bg-gradient-to-br from-[var(--color-primary)] via-[var(--color-primary)]/40 to-[var(--color-accent)] opacity-70 blur-[1px] transition-opacity duration-300 group-hover:opacity-100" />
                 <img
                   src={profileScrolledImg}
                   alt="Profile with developer stats"
                   width={945}
                   height={1260}
-                  className="relative w-full rounded-3xl"
+                  className="relative w-full h-full object-contain"
                 />
               </motion.div>
             </motion.div>

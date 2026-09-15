@@ -31,7 +31,7 @@ const ShapeWithPhoto = () => {
         <boxGeometry args={[2.5, 2.5, 2.5]} />
         <meshStandardMaterial
           map={texture}
-          color="#ffffff"
+          color="#FFF9FA"
           roughness={0.2}
           metalness={0.8}
         />
@@ -59,7 +59,7 @@ const Hero3D = () => {
         <directionalLight
           position={[10, 10, -5]}
           intensity={0.5}
-          color="#f97316"
+          color="#C5A3FF"
         />
 
         <ShapeWithPhoto />

@@ -18,11 +18,11 @@ const cards = [
     id: "who",
     tag: "SYS.PROFILE",
     icon: User,
-    iconColor: "#f97316",
+    iconColor: "#C5A3FF",
     title: "Who I Am",
-    body: "I’m someone who learns best by getting hands-on — experimenting, building, breaking things, and figuring out how to make them work",
-    accentFrom: "#f97316",
-    accentTo: "#fb923c",
+    body: "I'm someone who learns best by getting hands-on — experimenting, building, breaking things, and figuring out how to make them work",
+    accentFrom: "#C5A3FF",
+    accentTo: "#DCCBFF",
   },
   {
     id: "what",
@@ -209,7 +209,7 @@ const HomeAbout = () => {
           className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-40"
           style={{
             background:
-              "radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.07) 0%, transparent 65%)",
             filter: "blur(40px)",
           }}
         />
@@ -225,7 +225,7 @@ const HomeAbout = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-[clamp(3rem,8vw,6rem)]">
         {/* ── TOP: Portrait (left) + Text (right) ── */}
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-14 items-center">
           {/* Left — Profile Image (scroll-driven) */}
           <motion.div
             style={{ opacity: portraitOpacity, x: portraitX }}
@@ -235,14 +235,14 @@ const HomeAbout = () => {
               {/* Image with parallax */}
               <motion.div
                 style={{ y: imgY }}
-                className="relative rounded-3xl overflow-hidden"
+                className="relative aspect-[9/16]"
               >
                 <img
                   src={profileScrolledImg}
                   alt="Peratchi Manikandan — Full-Stack Developer"
                   width={1025}
                   height={1537}
-                  className="w-full rounded-3xl object-cover"
+                  className="w-full h-full object-contain"
                 />
               </motion.div>
             </div>
@@ -264,7 +264,7 @@ const HomeAbout = () => {
               <span
                 className="text-transparent bg-clip-text"
                 style={{
-                  backgroundImage: "linear-gradient(135deg, #f97316, #fb923c)",
+                  backgroundImage: "linear-gradient(135deg, #C5A3FF, #DCCBFF)",
                 }}
               >
                 Peratchi
@@ -280,7 +280,7 @@ const HomeAbout = () => {
               </span>
             </h2>
 
-            <p className="text-xs md:text-sm leading-relaxed tracking-widest uppercase text-[var(--text-secondary)] max-w-lg">
+            <p className="text-xs md:text-sm leading-relaxed tracking-widest text-[var(--text-secondary)] max-w-lg">
               I like taking an idea, breaking it down, writing the code, and seeing it become something real.
             </p>
 
@@ -288,7 +288,7 @@ const HomeAbout = () => {
             <Link
               to="/about"
               className="group inline-flex items-center gap-2 font-medium transition-all active:scale-95 py-2 min-h-[44px]"
-              style={{ color: "#f97316" }}
+              style={{ color: "#C5A3FF" }}
             >
               <span>Read My Full Story</span>
               <ArrowRight

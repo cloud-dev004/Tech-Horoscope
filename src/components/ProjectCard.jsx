@@ -33,7 +33,7 @@ const ProjectCard = ({ project, index }) => {
           </div>
           <Link
             to={`/projects/${project.slug}`}
-            className="p-3 bg-[var(--bg)] rounded-full text-[var(--text-primary)] hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+            className="p-3 bg-[var(--bg)] rounded-full text-[var(--text-primary)] hover:bg-[var(--color-primary)] hover:text-[#FFF9FA] transition-colors"
           >
             <ArrowUpRight size={20} />
           </Link>

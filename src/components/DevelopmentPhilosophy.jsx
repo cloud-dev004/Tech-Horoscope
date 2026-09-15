@@ -74,7 +74,7 @@ const PhilosophyCard = ({ item }) => {
         className="absolute inset-0 rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background:
-            "linear-gradient(135deg, rgba(249,115,22,0.4) 0%, rgba(6,182,212,0.2) 50%, transparent 100%)",
+            "linear-gradient(135deg, rgba(197, 163, 255,0.4) 0%, rgba(6,182,212,0.2) 50%, transparent 100%)",
         }}
       />
 
@@ -97,11 +97,11 @@ const PhilosophyCard = ({ item }) => {
             }
             className="w-12 h-12 rounded-xl flex items-center justify-center relative z-10"
             style={{
-              background: "rgba(249,115,22,0.15)",
-              boxShadow: "0 0 15px rgba(249,115,22,0.2)",
+              background: "rgba(197, 163, 255,0.15)",
+              boxShadow: "0 0 15px rgba(197, 163, 255,0.2)",
             }}
           >
-            <Icon size={24} style={{ color: "#f97316" }} />
+            <Icon size={24} style={{ color: "#C5A3FF" }} />
           </motion.div>
           <span className="font-mono text-sm tracking-widest text-[var(--text-secondary)] opacity-50 group-hover:opacity-100 transition-opacity duration-300">
             {item.id}
@@ -135,7 +135,7 @@ const DevelopmentPhilosophy = () => {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.06) 0%, transparent 70%)",
             filter: "blur(60px)",
           }}
         />
@@ -145,11 +145,11 @@ const DevelopmentPhilosophy = () => {
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-[0.4rem]">
           <div className="flex items-center gap-3">
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
             <span className="text-[var(--text-label)] font-light tracking-[0.3em] uppercase text-[0.68rem]">
               Development Philosophy
             </span>
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
           </div>
 
           <h2

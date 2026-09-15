@@ -82,7 +82,7 @@ const CoverSection = () => {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[clamp(350px,60vw,700px)] h-[clamp(350px,60vw,700px)]"
           style={{
             background:
-              "radial-gradient(circle, rgba(249,115,22,0.10) 0%, transparent 62%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.10) 0%, transparent 62%)",
             filter: "blur(40px)",
           }}
         />
@@ -98,7 +98,7 @@ const CoverSection = () => {
         <div className="max-[1279px]:contents xl:block xl:space-y-4 xl:text-right">
           {/* Left Heading */}
           <h2
-            className="order-1 xl:order-none max-[1279px]:text-[clamp(2.4rem,8vw,6rem)] xl:text-5xl font-black uppercase leading-tight text-white text-center xl:text-right w-full"
+            className="order-1 xl:order-none max-[1279px]:text-[clamp(2.4rem,8vw,6rem)] xl:text-5xl font-black uppercase leading-tight text-[#FFF9FA] text-center xl:text-right w-full"
             style={{
               fontFamily: "var(--font-heading)",
               letterSpacing: "-0.01em",
@@ -115,7 +115,7 @@ const CoverSection = () => {
             className="order-4 xl:order-none flex flex-col items-center xl:items-end w-full max-[1279px]:max-w-[320px] text-center xl:text-right"
           >
             <div className="w-10 h-px bg-[var(--color-primary)]/60 mb-4 xl:mb-4 max-[1279px]:mt-6" />
-            <p className="text-[clamp(.9rem,2vw,1.1rem)] text-white/40 font-light leading-relaxed">
+            <p className="text-[clamp(.9rem,2vw,1.1rem)] text-[#FFF9FA]/40 font-light leading-relaxed">
               Explore my works
               <br />
               and projects
@@ -138,7 +138,7 @@ const CoverSection = () => {
             className="w-[clamp(180px,35vw,420px)] xl:w-auto xl:max-h-[80vh] object-contain select-none pointer-events-none"
             style={{
               filter:
-                "drop-shadow(0 0 40px rgba(249,115,22,0.55)) drop-shadow(0 0 80px rgba(249,115,22,0.18))",
+                "drop-shadow(0 0 40px rgba(197, 163, 255,0.55)) drop-shadow(0 0 80px rgba(197, 163, 255,0.18))",
             }}
           />
         </motion.div>
@@ -147,7 +147,7 @@ const CoverSection = () => {
         <div className="max-[1279px]:contents xl:block xl:space-y-4 xl:text-left">
           {/* Right Heading */}
           <h2
-            className="order-3 xl:order-none max-[1279px]:text-[clamp(2.4rem,8vw,6rem)] xl:text-5xl font-black uppercase leading-tight text-white text-center xl:text-left w-full"
+            className="order-3 xl:order-none max-[1279px]:text-[clamp(2.4rem,8vw,6rem)] xl:text-5xl font-black uppercase leading-tight text-[#FFF9FA] text-center xl:text-left w-full"
             style={{
               fontFamily: "var(--font-heading)",
               letterSpacing: "-0.01em",
@@ -167,7 +167,7 @@ const CoverSection = () => {
             <motion.p
               animate={{ opacity: [0.3, 0.7, 0.3] }}
               transition={{ duration: 2.5, repeat: Infinity }}
-              className="text-[clamp(0.6rem,1.5vw,0.75rem)] tracking-[0.3em] uppercase text-white/35"
+              className="text-[clamp(0.6rem,1.5vw,0.75rem)] tracking-[0.3em] uppercase text-[#FFF9FA]/35"
             >
               Scroll to explore ↓
             </motion.p>

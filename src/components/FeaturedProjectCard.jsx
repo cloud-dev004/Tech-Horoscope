@@ -32,10 +32,10 @@ const FeaturedProjectCard = memo(
           className="card-inner w-full h-full rounded-[2rem] overflow-hidden relative group border-2 shadow-2xl bg-black"
           style={{
             borderColor: isActive
-              ? "rgba(249,115,22,0.7)"
+              ? "rgba(197, 163, 255,0.7)"
               : "rgba(255,255,255,0.05)",
             boxShadow: isActive
-              ? "0 0 60px rgba(249,115,22,0.25), 0 30px 80px rgba(0,0,0,0.8)"
+              ? "0 0 60px rgba(197, 163, 255,0.25), 0 30px 80px rgba(0,0,0,0.8)"
               : "0 20px 50px rgba(0,0,0,0.6)",
             transition: "border-color 0.65s ease, box-shadow 0.65s ease",
           }}
@@ -45,7 +45,7 @@ const FeaturedProjectCard = memo(
             <div
               className="absolute inset-0 rounded-[2rem] pointer-events-none z-0"
               style={{
-                boxShadow: "0 0 0 2px rgba(249,115,22,0.4)",
+                boxShadow: "0 0 0 2px rgba(197, 163, 255,0.4)",
                 animation: "pulse-glow 2.5s ease-in-out infinite",
               }}
             />
@@ -78,7 +78,7 @@ const FeaturedProjectCard = memo(
                   color: isActive ? "var(--color-primary)" : "#999",
                   background: "rgba(0,0,0,0.5)",
                   borderColor: isActive
-                    ? "rgba(249,115,22,0.4)"
+                    ? "rgba(197, 163, 255,0.4)"
                     : "rgba(255,255,255,0.1)",
                 }}
               >
@@ -91,7 +91,7 @@ const FeaturedProjectCard = memo(
                     href={project.liveUrl || "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
+                    className="w-9 h-9 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[#FFF9FA] hover:scale-110 transition-transform shadow-lg"
                   >
                     <ExternalLink size={15} />
                   </a>
@@ -114,7 +114,7 @@ const FeaturedProjectCard = memo(
             {/* Bottom info */}
             <div>
               <h3
-                className="font-heading font-bold text-white mb-2 tracking-wide"
+                className="font-heading font-bold text-[#FFF9FA] mb-2 tracking-wide"
                 style={{ fontSize: "clamp(1.1rem, 3vh, 1.8rem)" }}
               >
                 {project.title}
@@ -135,7 +135,7 @@ const FeaturedProjectCard = memo(
                       background: "rgba(0,0,0,0.5)",
                       color: isActive ? "white" : "#888",
                       borderColor: isActive
-                        ? "rgba(249,115,22,0.3)"
+                        ? "rgba(197, 163, 255,0.3)"
                         : "rgba(255,255,255,0.08)",
                     }}
                   >

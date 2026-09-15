@@ -99,12 +99,12 @@ const ResumeButton: React.FC<ResumeButtonProps> = ({
         whileHover={prefersReducedMotion ? {} : { y: -3 }}
         whileTap={prefersReducedMotion ? {} : { scale: 0.97, transition: { duration: 0.18 } }}
         transition={{ duration: 0.25, ease: 'easeOut' }}
-        className={`relative inline-flex items-center justify-center gap-2 border-[1.5px] border-[rgba(255,255,255,0.15)] hover:border-[var(--color-primary)] text-[var(--text-primary)] hover:text-[var(--color-primary)] px-8 py-4 rounded-full font-bold transition-colors min-h-[50px] min-w-[180px] tracking-wide text-sm bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(249,115,22,0.05)] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
+        className={`relative inline-flex items-center justify-center gap-2 border-[1.5px] border-[rgba(255,255,255,0.15)] hover:border-[var(--color-primary)] text-[var(--text-primary)] hover:text-[var(--color-primary)] px-8 py-4 rounded-full font-bold transition-colors min-h-[50px] min-w-[180px] tracking-wide text-sm bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(197, 163, 255,0.05)] overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${
           isLoading ? 'cursor-wait pointer-events-none' : 'cursor-pointer'
         } ${className}`}
         style={{
           boxShadow: isHovered 
-            ? '0 0 20px rgba(249,115,22,0.2), inset 0 0 10px rgba(255,255,255,0.05)' 
+            ? '0 0 20px rgba(197, 163, 255,0.2), inset 0 0 10px rgba(255,255,255,0.05)' 
             : 'none'
         }}
       >
@@ -135,7 +135,7 @@ const ResumeButton: React.FC<ResumeButtonProps> = ({
           }
           transition={{ duration: 0.25, ease: 'easeOut' }}
           style={{ 
-            filter: isHovered ? 'drop-shadow(0 0 8px rgba(249,115,22,0.6))' : 'none'
+            filter: isHovered ? 'drop-shadow(0 0 8px rgba(197, 163, 255,0.6))' : 'none'
           }}
           className="relative z-10"
         >

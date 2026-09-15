@@ -165,8 +165,8 @@ const TechCard = ({
   // Z-index calculation (using Math.round to make it an integer for zIndex)
   const zIndex = useTransform(offset, (v) => Math.round(20 - Math.abs(v)));
 
-  // Overlap -40px to -60px for width 220px -> spacing around 160px
-  const x = useTransform(offset, (v) => `calc(-50% + ${v * 160}px)`);
+  // Offset spacing around 90px for 120px cards
+  const x = useTransform(offset, (v) => `calc(-50% + ${v * 90}px)`);
 
   return (
     <motion.div
@@ -174,8 +174,8 @@ const TechCard = ({
         position: "absolute",
         top: "50%",
         left: "50%",
-        width: 220,
-        height: 260,
+        width: 120,
+        height: 120,
         x,
         y: "-50%",
         rotateY,
@@ -189,7 +189,7 @@ const TechCard = ({
         background: "rgba(18, 18, 18, 0.7)",
         backdropFilter: "blur(12px)",
         border: isActive
-          ? "1px solid rgba(255, 140, 0, 0.4)"
+          ? "1px solid rgba(197, 163, 255, 0.4)"
           : "1px solid rgba(255, 255, 255, 0.05)",
         boxShadow: isActive ? undefined : "0 10px 30px rgba(0,0,0,0.5)",
         display: "flex",
@@ -204,8 +204,8 @@ const TechCard = ({
         <div
           className="absolute inset-0 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
-            boxShadow: "inset 0 0 30px rgba(255, 140, 0, 0.2)",
-            border: "1px solid rgba(255, 140, 0, 0.7)",
+            boxShadow: "inset 0 0 30px rgba(197, 163, 255, 0.2)",
+            border: "1px solid rgba(197, 163, 255, 0.7)",
           }}
         />
       )}
@@ -223,8 +223,8 @@ const TechCard = ({
             : {}
         }
         style={{
-          width: 90,
-          height: 90,
+          width: 56,
+          height: 56,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -235,8 +235,8 @@ const TechCard = ({
         <img
           src={tech.url}
           alt={tech.name}
-          width={90}
-          height={90}
+          width={56}
+          height={56}
           style={{
             width: "100%",
             height: "100%",
@@ -248,7 +248,7 @@ const TechCard = ({
           }}
           className={
             isActive
-              ? "group-hover:drop-shadow-[0_0_15px_rgba(255,140,0,0.4)]"
+              ? "group-hover:drop-shadow-[0_0_15px_rgba(197, 163, 255,0.4)]"
               : ""
           }
         />
@@ -385,266 +385,247 @@ const TechStack = () => {
           width: "70vw",
           height: "400px",
           background:
-            "radial-gradient(ellipse at center, rgba(255,140,0,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(197, 163, 255,0.06) 0%, transparent 70%)",
           filter: "blur(60px)",
           pointerEvents: "none",
           zIndex: 0,
         }}
       />
 
-      {/* ── Header ── */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 10,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          gap: "0.4rem",
-          paddingBottom: "3rem",
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <div
-            style={{
-              height: 1,
-              width: "clamp(18px, 3vw, 48px)",
-              background: "rgba(255,140,0,0.5)",
-            }}
-          />
-          <span
-            style={{
-              color: "var(--text-label)",
-              fontWeight: 300,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              fontSize: "0.68rem",
-            }}
-          >
-            Featured Technologies
-          </span>
-          <div
-            style={{
-              height: 1,
-              width: "clamp(18px, 3vw, 48px)",
-              background: "rgba(255,140,0,0.5)",
-            }}
-          />
-        </div>
-
-        <h2
-          style={{
-            margin: 0,
-            fontFamily: "var(--font-heading, serif)",
-            fontWeight: 700,
-            fontSize: "clamp(1.8rem, 4vw, 3rem)",
-            color: "#ffffff",
-            lineHeight: 1,
-          }}
-        >
-          MY TECH STACK
-        </h2>
-
-        <p
-          style={{
-            margin: 0,
-            color: "var(--text-secondary)",
-            fontWeight: 300,
-            fontSize: "clamp(0.72rem, 1.2vw, 0.95rem)",
-            maxWidth: "400px",
-          }}
-        >
-          The technologies I use to transform ideas into high-performance
-          digital products.
-        </p>
-      </div>
-
-      {/* ── Cards Carousel Stage ── */}
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          height: "340px", // Increased height to accommodate Cover Flow rotations
-          zIndex: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          perspective: "1500px",
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {/* Project cards container */}
-        <div
-          ref={cardAreaRef}
-          style={{
-            position: "absolute",
-            inset: 0,
-            cursor: "grab",
-          }}
-          onMouseDown={(e) => {
-            dragX.current = e.clientX;
-          }}
-          onMouseUp={(e) => {
-            if (dragX.current === null) return;
-            const d = dragX.current - e.clientX;
-            if (Math.abs(d) > 40) go(d > 0 ? 1 : -1);
-            dragX.current = null;
-          }}
-          onMouseLeave={() => {
-            dragX.current = null;
-          }}
-          onTouchStart={(e) => {
-            dragX.current = e.touches[0].clientX;
-          }}
-          onTouchEnd={(e) => {
-            if (dragX.current === null) return;
-            const d = dragX.current - e.changedTouches[0].clientX;
-            if (Math.abs(d) > 40) go(d > 0 ? 1 : -1);
-            dragX.current = null;
-          }}
-        >
-          {TECHNOLOGIES.map((tech, i) => (
-            <TechCard
-              key={tech.id}
-              tech={tech}
-              index={i}
-              activeIndex={active}
-              smoothIndex={smoothIndex}
-              total={total}
-              screenType={screenType}
+      {/* ── Asymmetric Layout Container (20% Left Wording / 80% Right Carousel) ── */}
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8 md:gap-6 relative z-10">
+        {/* ── Left Side Wording (20% Space) ── */}
+        <div className="w-full md:w-[20%] flex flex-col items-start text-left gap-3 flex-shrink-0">
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div
+              style={{
+                height: 1,
+                width: 24,
+                background: "rgba(197, 163, 255,0.5)",
+              }}
             />
-          ))}
-        </div>
-      </div>
-
-      {/* ── Bottom controls ── */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 20,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "1rem",
-          paddingTop: "2rem",
-        }}
-      >
-        {/* Navigation Arrows */}
-        <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-          <button
-            onClick={() => go(-1)}
-            aria-label="Previous tech"
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.1)",
-              background: "transparent",
-              color: "white",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "all 0.3s",
-            }}
-            className="hover:scale-105 active:scale-95 hover:border-[rgba(255,140,0,0.5)]"
-          >
-            <ChevronLeft size={20} />
-          </button>
-
-          <div style={{ display: "flex", gap: "6px" }}>
-            {/* Show a window of dots if too many */}
-            {TECHNOLOGIES.map((_, i) => {
-              const currentNormalized = ((active % total) + total) % total;
-
-              let diff = i - currentNormalized;
-              if (diff > total / 2) diff -= total;
-              if (diff < -total / 2) diff += total;
-
-              // Only render dots around the active one or first/last
-              const isVisible =
-                Math.abs(diff) <= 3 || i === 0 || i === total - 1;
-              if (!isVisible) {
-                if (i === 1 || i === total - 2) {
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        color: "rgba(255,255,255,0.2)",
-                        fontSize: "10px",
-                        lineHeight: "4px",
-                      }}
-                    >
-                      ...
-                    </span>
-                  );
-                }
-                return null;
-              }
-
-              const isDotActive = i === currentNormalized;
-
-              return (
-                <button
-                  key={i}
-                  onClick={() => goTo(i)}
-                  style={{
-                    width: isDotActive ? 24 : 6,
-                    height: 6,
-                    borderRadius: 999,
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    background: isDotActive
-                      ? "rgba(255,140,0,1)"
-                      : "rgba(255,255,255,0.2)",
-                    boxShadow: isDotActive
-                      ? "0 0 10px rgba(255,140,0,0.5)"
-                      : "none",
-                    transition: "all 0.3s ease",
-                  }}
-                  aria-label={`Go to ${TECHNOLOGIES[i].name}`}
-                />
-              );
-            })}
+            <span
+              style={{
+                color: "var(--text-label)",
+                fontWeight: 300,
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                fontSize: "0.65rem",
+              }}
+            >
+              Featured Tech
+            </span>
           </div>
 
-          <button
-            onClick={() => go(1)}
-            aria-label="Next tech"
+          <h2
             style={{
-              width: 44,
-              height: 44,
-              borderRadius: "50%",
-              border: "1px solid rgba(255,255,255,0.1)",
-              background: "transparent",
-              color: "white",
-              cursor: "pointer",
+              margin: 0,
+              fontFamily: "var(--font-heading, serif)",
+              fontWeight: 700,
+              fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)",
+              color: "#FFF9FA",
+              lineHeight: 1.05,
+            }}
+          >
+            MY TECH STACK
+          </h2>
+
+          <p
+            style={{
+              margin: 0,
+              color: "var(--text-secondary)",
+              fontWeight: 300,
+              fontSize: "clamp(0.75rem, 1vw, 0.88rem)",
+              lineHeight: 1.55,
+            }}
+          >
+            The technologies I use to transform ideas into high-performance digital products.
+          </p>
+        </div>
+
+        {/* ── Right Side Skill Scrolling (80% Space) ── */}
+        <div className="w-full md:w-[80%] flex flex-col items-center min-w-0">
+          {/* ── Cards Carousel Stage ── */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "340px",
+              zIndex: 10,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              transition: "all 0.3s",
+              perspective: "1500px",
+              transformStyle: "preserve-3d",
             }}
-            className="hover:scale-105 active:scale-95 hover:border-[rgba(255,140,0,0.5)]"
           >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+            {/* Project cards container */}
+            <div
+              ref={cardAreaRef}
+              style={{
+                position: "absolute",
+                inset: 0,
+                cursor: "grab",
+              }}
+              onMouseDown={(e) => {
+                dragX.current = e.clientX;
+              }}
+              onMouseUp={(e) => {
+                if (dragX.current === null) return;
+                const d = dragX.current - e.clientX;
+                if (Math.abs(d) > 40) go(d > 0 ? 1 : -1);
+                dragX.current = null;
+              }}
+              onMouseLeave={() => {
+                dragX.current = null;
+              }}
+              onTouchStart={(e) => {
+                dragX.current = e.touches[0].clientX;
+              }}
+              onTouchEnd={(e) => {
+                if (dragX.current === null) return;
+                const d = dragX.current - e.changedTouches[0].clientX;
+                if (Math.abs(d) > 40) go(d > 0 ? 1 : -1);
+                dragX.current = null;
+              }}
+            >
+              {TECHNOLOGIES.map((tech, i) => (
+                <TechCard
+                  key={tech.id}
+                  tech={tech}
+                  index={i}
+                  activeIndex={active}
+                  smoothIndex={smoothIndex}
+                  total={total}
+                  screenType={screenType}
+                />
+              ))}
+            </div>
+          </div>
 
-        {/* Hint */}
+          {/* ── Bottom controls ── */}
+          <div
+            style={{
+              position: "relative",
+              zIndex: 20,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1rem",
+              paddingTop: "1.5rem",
+            }}
+          >
+            {/* Navigation Arrows */}
+            <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
+              <button
+                onClick={() => go(-1)}
+                aria-label="Previous tech"
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "transparent",
+                  color: "white",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "all 0.3s",
+                }}
+                className="hover:scale-105 active:scale-95 hover:border-[rgba(197, 163, 255,0.5)]"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <div style={{ display: "flex", gap: "6px" }}>
+                {TECHNOLOGIES.map((_, i) => {
+                  const currentNormalized = ((active % total) + total) % total;
+
+                  let diff = i - currentNormalized;
+                  if (diff > total / 2) diff -= total;
+                  if (diff < -total / 2) diff += total;
+
+                  const isVisible =
+                    Math.abs(diff) <= 3 || i === 0 || i === total - 1;
+                  if (!isVisible) {
+                    if (i === 1 || i === total - 2) {
+                      return (
+                        <span
+                          key={i}
+                          style={{
+                            color: "rgba(255,255,255,0.2)",
+                            fontSize: "10px",
+                            lineHeight: "4px",
+                          }}
+                        >
+                          ...
+                        </span>
+                      );
+                    }
+                    return null;
+                  }
+
+                  const isDotActive = i === currentNormalized;
+
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => goTo(i)}
+                      style={{
+                        width: isDotActive ? 24 : 6,
+                        height: 6,
+                        borderRadius: 999,
+                        border: "none",
+                        padding: 0,
+                        cursor: "pointer",
+                        background: isDotActive
+                          ? "rgba(197, 163, 255,1)"
+                          : "rgba(255,255,255,0.2)",
+                        boxShadow: isDotActive
+                          ? "0 0 10px rgba(197, 163, 255,0.5)"
+                          : "none",
+                        transition: "all 0.3s ease",
+                      }}
+                      aria-label={`Go to ${TECHNOLOGIES[i].name}`}
+                    />
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={() => go(1)}
+                aria-label="Next tech"
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "transparent",
+                  color: "white",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "all 0.3s",
+                }}
+                className="hover:scale-105 active:scale-95 hover:border-[rgba(197, 163, 255,0.5)]"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       <style>{`
         @media (prefers-reduced-motion: no-preference) {
           @keyframes breathing-glow {
             0%, 100% { 
-              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 140, 0, 0.15), inset 0 0 20px rgba(255, 140, 0, 0.05); 
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(197, 163, 255, 0.15), inset 0 0 20px rgba(197, 163, 255, 0.05); 
             }
             50% { 
-              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 46px rgba(255, 140, 0, 0.1725), inset 0 0 23px rgba(255, 140, 0, 0.0575); 
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 46px rgba(197, 163, 255, 0.1725), inset 0 0 23px rgba(197, 163, 255, 0.0575); 
             }
           }
           .breathing-glow {

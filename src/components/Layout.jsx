@@ -27,10 +27,10 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {isHome && <CoverSection />}
+
 
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--surface)] transition-colors duration-300">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--color-primary)] shadow-[0_4px_20px_rgba(197, 163, 255,0.5),0_1px_8px_rgba(197, 163, 255,0.8)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}

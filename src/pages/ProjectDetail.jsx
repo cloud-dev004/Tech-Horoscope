@@ -100,7 +100,7 @@ const ProjectDetail = () => {
           <div className="flex gap-4 pt-2">
             <a
               href={project.demoUrl}
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-white rounded-full text-sm hover:bg-[var(--color-primary-hover)] transition-colors"
+              className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-[#FFF9FA] rounded-full text-sm hover:bg-[var(--color-primary-hover)] transition-colors"
             >
               <ExternalLink size={16} /> Live Demo
             </a>

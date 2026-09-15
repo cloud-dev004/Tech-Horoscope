@@ -89,7 +89,7 @@ const ScrollARTransition = () => {
           y: orangeY,
           scale: orangeScale,
           background:
-            "radial-gradient(circle, rgba(249,115,22,0.13) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(197, 163, 255,0.13) 0%, transparent 70%)",
           filter: "blur(30px)",
         }}
       />
@@ -133,7 +133,7 @@ const ScrollARTransition = () => {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="0.5"
-                  className="text-white/10 dark:text-white/5"
+                  className="text-[#FFF9FA]/10 dark:text-[#FFF9FA]/5"
                 />
               </pattern>
             </defs>
@@ -146,7 +146,7 @@ const ScrollARTransition = () => {
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div
           style={{ scale: sonarScale1, opacity: sonarOpacity1 }}
-          className="w-[240px] h-[240px] rounded-full border border-dashed border-[#f97316]/30 flex items-center justify-center"
+          className="w-[240px] h-[240px] rounded-full border border-dashed border-[#C5A3FF]/30 flex items-center justify-center"
         >
           <div className="w-[85%] h-[85%] rounded-full border border-dotted border-[#06b6d4]/20" />
         </motion.div>
@@ -157,14 +157,14 @@ const ScrollARTransition = () => {
           style={{ scale: sonarScale2, opacity: sonarOpacity2 }}
           className="w-[200px] h-[200px] rounded-full border border-[#06b6d4]/25 flex items-center justify-center"
         >
-          <div className="w-[80%] h-[80%] rounded-full border border-[#f97316]/15" />
+          <div className="w-[80%] h-[80%] rounded-full border border-[#C5A3FF]/15" />
         </motion.div>
       </div>
 
       {/* ── Parallax Floating Coordinate Nodes (+) ── */}
       <motion.div
         style={{ y: node1Y, opacity: nodeOpacity }}
-        className="absolute left-[30%] text-[14px] text-[#f97316]/40 font-mono"
+        className="absolute left-[30%] text-[14px] text-[#C5A3FF]/40 font-mono"
       >
         +
       </motion.div>
@@ -176,7 +176,7 @@ const ScrollARTransition = () => {
       </motion.div>
       <motion.div
         style={{ y: node3Y, opacity: nodeOpacity }}
-        className="absolute left-[45%] text-[13px] text-white/20 font-mono"
+        className="absolute left-[45%] text-[13px] text-[#FFF9FA]/20 font-mono"
       >
         +
       </motion.div>
@@ -188,7 +188,7 @@ const ScrollARTransition = () => {
           top: beamY,
           opacity: beamOpacity,
           background:
-            "linear-gradient(to right, transparent, rgba(6,182,212,0.4), rgba(249,115,22,0.4), transparent)",
+            "linear-gradient(to right, transparent, rgba(6,182,212,0.4), rgba(197, 163, 255,0.4), transparent)",
           boxShadow: "0 0 10px rgba(6,182,212,0.3)",
         }}
       />

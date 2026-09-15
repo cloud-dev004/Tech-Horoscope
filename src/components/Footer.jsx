@@ -10,7 +10,7 @@ const FooterLink = ({ to, label, isExternal = false }) => {
       <span className="text-[var(--text-primary)] group-hover:text-[var(--color-primary)] transition-colors duration-300 font-medium">
         {label}
       </span>
-      <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[var(--color-primary)] transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(249,115,22,0.6)]" />
+      <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[var(--color-primary)] transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_rgba(197, 163, 255,0.6)]" />
     </span>
   );
 
@@ -39,7 +39,7 @@ const SocialIcon = ({ href, icon: Icon, label }) => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label={label}
-    className="w-10 h-10 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--color-primary)] hover:bg-[rgba(249,115,22,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(249,115,22,0.2)]"
+    className="w-10 h-10 rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--color-primary)] hover:bg-[rgba(197, 163, 255,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_5px_15px_rgba(197, 163, 255,0.2)]"
   >
     <Icon size={18} />
   </a>
@@ -52,11 +52,11 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className="relative w-full bg-[#050505] pt-24 pb-8 overflow-hidden z-20 border-t border-[rgba(255,255,255,0.02)]"
+      className="relative w-full bg-[#050505] pt-12 pb-8 overflow-hidden z-20 border-t border-[rgba(255,255,255,0.02)]"
     >
       {/* Soft Top Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-[rgba(249,115,22,0.3)] to-transparent" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[150px] bg-[rgba(249,115,22,0.03)] blur-[50px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-[rgba(197, 163, 255,0.3)] to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[150px] bg-[rgba(197, 163, 255,0.03)] blur-[50px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8 mb-16">

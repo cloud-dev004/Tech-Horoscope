@@ -9,7 +9,7 @@ const CTA = () => {
   const inView = useInView(ref, { once: true, margin: "-20%" });
 
   return (
-    <section className="relative w-full py-[clamp(6rem,15vw,10rem)] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full pt-[clamp(6rem,15vw,10rem)] pb-0 overflow-hidden flex items-center justify-center">
       {/* Very subtle background radial glow */}
       <div
         className="absolute inset-0 pointer-events-none -z-10 flex items-center justify-center"
@@ -19,7 +19,7 @@ const CTA = () => {
           className="w-[800px] h-[800px] rounded-full opacity-20"
           style={{
             background:
-              "radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 60%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.05) 0%, transparent 60%)",
             filter: "blur(80px)",
           }}
         />
@@ -44,7 +44,7 @@ const CTA = () => {
           <span
             className="text-transparent bg-clip-text"
             style={{
-              backgroundImage: "linear-gradient(135deg, #f97316, #fb923c)",
+              backgroundImage: "linear-gradient(135deg, #C5A3FF, #DCCBFF)",
             }}
           >
             AMAZING
@@ -60,7 +60,7 @@ const CTA = () => {
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <Link
             to="/contact"
-            className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(249,115,22,0.25)] hover:shadow-[0_0_30px_rgba(249,115,22,0.45)] active:scale-95 min-h-[50px] min-w-[180px] tracking-wide text-sm"
+            className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(197, 163, 255,0.25)] hover:shadow-[0_0_30px_rgba(197, 163, 255,0.45)] active:scale-95 min-h-[50px] min-w-[180px] tracking-wide text-sm"
           >
             START A PROJECT
             <ArrowRight

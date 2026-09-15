@@ -81,14 +81,14 @@ const TimelineNode = ({ event, index }) => {
       {/* Center Node (Icon) */}
       <motion.div
         style={{ opacity }}
-        className="absolute top-0 md:top-auto left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-[var(--bg)] flex items-center justify-center z-30 shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+        className="absolute top-0 md:top-auto left-1/2 -translate-x-1/2 w-12 h-12 rounded-full border-4 border-[var(--bg)] flex items-center justify-center z-30 shadow-[0_0_20px_rgba(197, 163, 255,0.4)]"
         // Ensure the node sits perfectly on top of the line
         initial={{ background: "var(--surface)" }}
         whileInView={{ background: "var(--color-primary)" }}
         viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
         transition={{ duration: 0.5 }}
       >
-        <Icon size={18} className="text-white" loding="lazy"/>
+        <Icon size={18} className="text-[#FFF9FA]" loding="lazy"/>
       </motion.div>
 
       {/* Spacer for symmetry on Desktop */}
@@ -113,7 +113,7 @@ const TimelineNode = ({ event, index }) => {
           <div
             className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             style={{
-              boxShadow: "inset 0 0 20px rgba(249,115,22,0.1)",
+              boxShadow: "inset 0 0 20px rgba(197, 163, 255,0.1)",
             }}
           />
           <h3
@@ -146,11 +146,11 @@ const ExperienceTimeline = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="flex flex-col items-center text-center gap-[0.4rem]">
           <div className="flex items-center gap-3">
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
             <span className="text-[var(--text-label)] font-light tracking-[0.3em] uppercase text-[0.68rem]">
               Experience Timeline
             </span>
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
           </div>
 
           <h2
@@ -180,7 +180,7 @@ const ExperienceTimeline = () => {
 
         {/* Animated Glow Line */}
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-[var(--color-primary)] z-10 hidden md:block shadow-[0_0_15px_rgba(249,115,22,0.8)]"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-[var(--color-primary)] z-10 hidden md:block shadow-[0_0_15px_rgba(197, 163, 255,0.8)]"
           style={{ height: lineHeight, originY: 0 }}
         />
 
@@ -188,7 +188,7 @@ const ExperienceTimeline = () => {
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-[rgba(255,255,255,0.05)] z-0 md:hidden" />
 
         <motion.div
-          className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-[var(--color-primary)] z-10 md:hidden shadow-[0_0_15px_rgba(249,115,22,0.8)]"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] bg-[var(--color-primary)] z-10 md:hidden shadow-[0_0_15px_rgba(197, 163, 255,0.8)]"
           style={{ height: lineHeight, originY: 0 }}
         />
 

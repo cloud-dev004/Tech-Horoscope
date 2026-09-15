@@ -5,7 +5,7 @@ import HomeAbout from "../components/HomeAbout";
 
 // ── Below-the-fold: lazy-loaded so they are excluded from the initial bundle ──
 const TechStack = lazy(() => import("../components/TechStack"));
-const FeaturedProjects = lazy(() => import("../components/FeaturedProjects"));
+const FeaturedProjects = lazy(() => import("../components/ProjectShowcase"));
 const DevelopmentPhilosophy = lazy(() => import("../components/DevelopmentPhilosophy"));
 const ExperienceTimeline = lazy(() => import("../components/ExperienceTimeline"));
 const FeaturedAchievements = lazy(() => import("../components/FeaturedAchievements"));

@@ -122,7 +122,7 @@ const ContactForm = () => {
               : { scale: 0.98 }
           }
           transition={{ duration: 0.2 }}
-          className={`w-full flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white h-[54px] rounded-lg font-medium transition-colors text-[clamp(16px,2.5vw,18px)] ${
+          className={`w-full flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] h-[54px] rounded-lg font-medium transition-colors text-[clamp(16px,2.5vw,18px)] ${
             isSubmitting
               ? "cursor-wait opacity-70"
               : showSuccessText

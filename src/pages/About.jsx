@@ -86,7 +86,7 @@ const About = () => {
           <Link
             to="/"
             state={{ scrollToAbout: true }}
-            className="group inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-white px-6 py-3 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(249,115,22,0.35)] hover:shadow-[0_0_30px_rgba(249,115,22,0.55)]"
+            className="group inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-6 py-3 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(197, 163, 255,0.35)] hover:shadow-[0_0_30px_rgba(197, 163, 255,0.55)]"
           >
             <ArrowLeft
               size={18}

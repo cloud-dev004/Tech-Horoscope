@@ -82,7 +82,7 @@ const AchievementCard = ({ item, index }) => {
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
           background:
-            "linear-gradient(135deg, rgba(249,115,22,0.5) 0%, transparent 100%)",
+            "linear-gradient(135deg, rgba(197, 163, 255,0.5) 0%, transparent 100%)",
         }}
       />
 
@@ -95,12 +95,12 @@ const AchievementCard = ({ item, index }) => {
           WebkitBackdropFilter: "blur(10px)",
         }}
       >
-        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[rgba(249,115,22,0.1)] mb-4 text-[var(--color-primary)] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[rgba(197, 163, 255,0.1)] mb-4 text-[var(--color-primary)] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110">
           <Icon size={24} />
         </div>
 
         <h3
-          className="text-4xl sm:text-5xl font-bold text-white mb-2"
+          className="text-4xl sm:text-5xl font-bold text-[#FFF9FA] mb-2"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           <Counter to={item.value} suffix={item.suffix} />
@@ -121,11 +121,11 @@ const FeaturedAchievements = () => {
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-[0.4rem]">
           <div className="flex items-center gap-3">
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
             <span className="text-[var(--text-label)] font-light tracking-[0.3em] uppercase text-[0.68rem]">
               Featured Achievements
             </span>
-            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(249,115,22,0.5)]" />
+            <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
           </div>
 
           <h2
