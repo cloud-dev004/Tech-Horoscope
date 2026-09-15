@@ -9,19 +9,15 @@ const Hero = () => {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"], // 0 when container top hits viewport top, 1 when container bottom hits viewport top
+    offset: ["start start", "end start"],
   });
 
   // Scroll Transforms
-  // Background
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  // Darken background gradient by reducing the opacity of the glow layers
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  // Portrait (Right) — only vertical translate on scroll, no zoom/fade/blur
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
-  // Text (Left)
   const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
@@ -31,16 +27,13 @@ const Hero = () => {
     ["blur(0px)", "blur(12px)"],
   );
 
-  // Scroll Indicator
-
-
   return (
     <section
       ref={containerRef}
-      className="relative h-[clamp(120vh,150vh,180vh)]"
+      className="relative min-h-[calc(100dvh-4rem)] lg:h-[180vh]"
     >
-      {/* Sticky Inner Container */}
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center bg-[var(--bg)]">
+      {/* Sticky Inner Container on Desktop, Relative on Mobile */}
+      <div className="relative lg:sticky top-0 min-h-[calc(100dvh-4rem)] lg:h-[100dvh] overflow-hidden flex items-center bg-[var(--bg)] pt-20 pb-8 sm:pt-24 lg:pt-0">
         {/* Background glow (animated) */}
         <motion.div
           className="absolute inset-0 pointer-events-none -z-10"
@@ -77,10 +70,10 @@ const Hero = () => {
         </motion.div>
 
         {/* Hero layout */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center py-16">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center py-2 lg:py-16">
           {/* Left Text */}
           <motion.div
-            className="space-y-6 origin-left"
+            className="space-y-4 sm:space-y-6 origin-left"
             style={{
               scale: textScale,
               y: textY,
@@ -88,20 +81,18 @@ const Hero = () => {
               filter: textBlur,
             }}
           >
-            <div className="space-y-4">
+            <div className="space-y-2 sm:space-y-4">
               <motion.p
-                className="text-[var(--color-primary)] font-semibold tracking-widest uppercase"
-                style={{ fontSize: "clamp(0.75rem, 1.5vw, 0.875rem)" }}
-                initial={{ opacity: 0, y: 40 }}
+                className="text-[var(--color-primary)] font-semibold tracking-widest uppercase text-xs sm:text-sm"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
                 Full-Stack Developer &amp; Cloud Enthusiast
               </motion.p>
               <motion.h1
-                className="font-bold leading-[1.08]"
-                style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}
-                initial={{ opacity: 0, y: 40 }}
+                className="font-bold leading-[1.08] text-3xl sm:text-5xl lg:text-7xl"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.68, ease: "easeOut" }}
               >
@@ -112,9 +103,8 @@ const Hero = () => {
                 Shipping
               </motion.h1>
               <motion.p
-                className="text-[var(--text-secondary)] max-w-lg leading-relaxed"
-                style={{ fontSize: "clamp(0.95rem, 2vw, 1.125rem)" }}
-                initial={{ opacity: 0, y: 40 }}
+                className="text-[var(--text-secondary)] max-w-lg leading-relaxed text-sm sm:text-base lg:text-lg"
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.76, ease: "easeOut" }}
               >
@@ -123,14 +113,14 @@ const Hero = () => {
             </div>
 
             <motion.div
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 30 }}
+              className="flex flex-wrap gap-3 sm:gap-4 pt-1 sm:pt-0"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
             >
               <Link
                 to="/projects"
-                className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-7 py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(197, 163, 255,0.35)] hover:shadow-[0_0_30px_rgba(197, 163, 255,0.55)] active:scale-95 min-h-[44px] min-w-[140px]"
+                className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-6 py-3 sm:px-7 sm:py-3.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(197,163,255,0.35)] hover:shadow-[0_0_30px_rgba(197,163,255,0.55)] active:scale-95 text-sm sm:text-base min-h-[44px] min-w-[140px]"
               >
                 View Projects
                 <ArrowRight
@@ -140,7 +130,7 @@ const Hero = () => {
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 border-2 border-[var(--surface)] hover:border-[var(--color-primary)] text-[var(--text-primary)] hover:text-[var(--color-primary)] px-7 py-3.5 rounded-full font-medium transition-all active:scale-95 min-h-[44px] min-w-[140px]"
+                className="inline-flex items-center justify-center gap-2 border-2 border-[var(--surface)] hover:border-[var(--color-primary)] text-[var(--text-primary)] hover:text-[var(--color-primary)] px-6 py-3 sm:px-7 sm:py-3.5 rounded-full font-medium transition-all active:scale-95 text-sm sm:text-base min-h-[44px] min-w-[140px]"
               >
                 Get in Touch
               </Link>
@@ -150,7 +140,7 @@ const Hero = () => {
           {/* Right Portrait */}
           <div className="flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 40 }}
+              initial={{ opacity: 0, scale: 0.92, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{
                 duration: 1,
@@ -161,7 +151,7 @@ const Hero = () => {
               }}
             >
               <motion.div
-                className="relative w-[240px] aspect-[9/16] sm:w-[320px] lg:w-[400px] shrink-0 group"
+                className="relative w-[180px] sm:w-[240px] md:w-[320px] lg:w-[400px] aspect-[3/4] sm:aspect-[9/16] shrink-0 group mx-auto"
                 style={{ y: portraitY }}
                 whileHover={{ scale: 1.02 }}
               >

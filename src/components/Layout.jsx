@@ -26,7 +26,7 @@ const Layout = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
 
 
       {/* Navbar */}
