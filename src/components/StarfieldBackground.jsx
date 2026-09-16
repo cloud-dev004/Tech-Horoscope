@@ -50,11 +50,11 @@ const StarfieldBackground = () => {
           y: Math.random() * height,
           size,
           baseOpacity: 0.3 + Math.random() * 0.6, // 0.3 to 0.9
-          vx: -(70 + Math.random() * 80) / 60, // 70-150px per second leftward
-          vy: (25 + Math.random() * 35) / 60, // 25-60px per second downward
+          vx: -(20 + Math.random() * 25) / 60, // 20-45px per second leftward
+          vy: (8 + Math.random() * 12) / 60, // downward speed
           isTwinkling,
           twinklePhase: Math.random() * Math.PI * 2,
-          twinkleSpeed: (Math.PI * 2) / (15 + Math.random() * 15), // Rapid 0.25-0.5s twinkle cycle
+          twinkleSpeed: (Math.PI * 2) / (45 + Math.random() * 45), // Faster 0.75-1.5s twinkle cycle
         });
       }
     };
@@ -65,10 +65,10 @@ const StarfieldBackground = () => {
           x: width * 0.25,
           y: height * 0.25,
           radius: Math.max(width, height) * 0.5,
-          color: "rgba(197, 163, 255, 0.05)", // Lavender Mist
+          color: "rgba(197, 163, 255, 0.04)", // Lavender Mist
           angle: 0,
-          speed: 0.015,
-          orbitRadius: 80,
+          speed: 0.004,
+          orbitRadius: 60,
           baseX: width * 0.25,
           baseY: height * 0.25,
         },
@@ -76,10 +76,10 @@ const StarfieldBackground = () => {
           x: width * 0.75,
           y: height * 0.75,
           radius: Math.max(width, height) * 0.5,
-          color: "rgba(6, 182, 212, 0.045)", // Cyan
+          color: "rgba(6, 182, 212, 0.035)", // Cyan
           angle: Math.PI,
-          speed: 0.012,
-          orbitRadius: 100,
+          speed: 0.0035,
+          orbitRadius: 80,
           baseX: width * 0.75,
           baseY: height * 0.75,
         },
@@ -87,10 +87,10 @@ const StarfieldBackground = () => {
           x: width * 0.5,
           y: height * 0.5,
           radius: Math.max(width, height) * 0.6,
-          color: "rgba(197, 163, 255, 0.04)", 
+          color: "rgba(197, 163, 255, 0.03)", 
           angle: Math.PI / 2,
-          speed: 0.010,
-          orbitRadius: 140,
+          speed: 0.0025,
+          orbitRadius: 110,
           baseX: width * 0.5,
           baseY: height * 0.5,
         }

@@ -32,7 +32,7 @@ const Hero = () => {
       ref={containerRef}
       className="relative flex flex-col justify-start"
     >
-      <div className="relative w-full overflow-hidden flex items-start bg-transparent pt-1 sm:pt-2 lg:pt-3 pb-2 sm:pb-4 lg:pb-6">
+      <div className="relative w-full flex items-start bg-transparent pt-1 sm:pt-2 lg:pt-3 pb-2 sm:pb-4 lg:pb-6">
         {/* Background glow (animated) */}
         <motion.div
           className="absolute inset-0 pointer-events-none -z-10"
@@ -150,16 +150,25 @@ const Hero = () => {
               }}
             >
               <motion.div
-                className="relative w-[180px] sm:w-[240px] md:w-[320px] lg:w-[400px] aspect-[3/4] sm:aspect-[9/16] shrink-0 group mx-auto"
+                className="relative w-[250px] sm:w-[300px] md:w-[350px] lg:w-[400px] aspect-[3/4] sm:aspect-[9/16] shrink-0 group mx-auto"
                 style={{ y: portraitY }}
                 whileHover={{ scale: 1.02 }}
               >
+                {/* Ambient Glowing Aura — Smooth Radial Fade to prevent hard edge clipping */}
+                <div 
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] rounded-full blur-xl opacity-75 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: "radial-gradient(circle, rgba(197,163,255,0.25) 0%, rgba(6,182,212,0.18) 45%, transparent 70%)"
+                  }}
+                  aria-hidden="true"
+                />
+
                 <img
                   src={profileScrolledImg}
                   alt="Profile with developer stats"
                   width={945}
                   height={1260}
-                  className="relative w-full h-full object-contain"
+                  className="relative w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(197,163,255,0.4)] drop-shadow-[0_0_40px_rgba(6,182,212,0.25)] transition-all duration-300"
                 />
               </motion.div>
             </motion.div>

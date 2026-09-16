@@ -186,12 +186,17 @@ const TechCard = ({
         zIndex,
         pointerEvents: isActive ? "auto" : "none",
         borderRadius: 24,
-        background: "rgba(18, 18, 18, 0.7)",
-        backdropFilter: "blur(12px)",
+        background: isActive
+          ? "linear-gradient(135deg, rgba(197, 163, 255, 0.16) 0%, rgba(6, 182, 212, 0.1) 50%, rgba(255, 255, 255, 0.05) 100%)"
+          : "linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 100%)",
+        backdropFilter: "blur(16px)",
+        WebkitBackdropFilter: "blur(16px)",
         border: isActive
-          ? "1px solid rgba(197, 163, 255, 0.4)"
-          : "1px solid rgba(255, 255, 255, 0.05)",
-        boxShadow: isActive ? undefined : "0 10px 30px rgba(0,0,0,0.5)",
+          ? "1px solid rgba(197, 163, 255, 0.55)"
+          : "1px solid rgba(255, 255, 255, 0.12)",
+        boxShadow: isActive
+          ? "0 12px 35px rgba(197, 163, 255, 0.25), 0 0 20px rgba(6, 182, 212, 0.15), inset 0 0 20px rgba(197, 163, 255, 0.1)"
+          : "0 8px 25px rgba(0, 0, 0, 0.35)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -204,8 +209,8 @@ const TechCard = ({
         <div
           className="absolute inset-0 rounded-[24px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
-            boxShadow: "inset 0 0 30px rgba(197, 163, 255, 0.2)",
-            border: "1px solid rgba(197, 163, 255, 0.7)",
+            boxShadow: "inset 0 0 25px rgba(197, 163, 255, 0.3)",
+            border: "1px solid rgba(197, 163, 255, 0.8)",
           }}
         />
       )}
@@ -368,7 +373,7 @@ const TechStack = () => {
         width: "100%",
         paddingTop: "clamp(4rem, 10vw, 8rem)",
         paddingBottom: "clamp(3rem, 6vw, 5rem)",
-        background: "#090909",
+        background: "transparent",
         display: "flex",
         flexDirection: "column",
         userSelect: "none",
