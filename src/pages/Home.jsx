@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import Hero from "../components/Hero";
-import ScrollARTransition from "../components/ScrollARTransition";
 import HomeAbout from "../components/HomeAbout";
 
 // ── Below-the-fold: lazy-loaded so they are excluded from the initial bundle ──
@@ -22,7 +21,6 @@ const Home = () => {
       {/* Everything below is normal scroll */}
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <Hero />
-        <ScrollARTransition />
         <HomeAbout />
       </div>
 
