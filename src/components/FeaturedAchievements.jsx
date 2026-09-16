@@ -11,9 +11,8 @@ const achievements = [
     icon: Briefcase,
   },
   { id: 2, label: "Technologies", value: 6, suffix: "+", icon: Cpu },
-
-  { id: 4, label: "Repositories", value: 6, suffix: "+", icon: GitCommit },
-  { id: 5, label: "Industrial Internship", value: 1, suffix: "", icon: Heart },
+  { id: 3, label: "Repositories", value: 6, suffix: "+", icon: GitCommit },
+  { id: 4, label: "Industrial Internship", value: 1, suffix: "", icon: Heart },
 ];
 
 const Counter = ({ from = 0, to, duration = 2, suffix = "" }) => {

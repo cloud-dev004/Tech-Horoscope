@@ -30,10 +30,9 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[calc(100dvh-4rem)] lg:h-[180vh]"
+      className="relative flex flex-col justify-start"
     >
-      {/* Sticky Inner Container on Desktop, Relative on Mobile */}
-      <div className="relative lg:sticky top-0 min-h-[calc(100dvh-4rem)] lg:h-[100dvh] overflow-hidden flex items-center bg-[var(--bg)] pt-20 pb-8 sm:pt-24 lg:pt-0">
+      <div className="relative w-full overflow-hidden flex items-start bg-transparent pt-1 sm:pt-2 lg:pt-3 pb-2 sm:pb-4 lg:pb-6">
         {/* Background glow (animated) */}
         <motion.div
           className="absolute inset-0 pointer-events-none -z-10"
@@ -70,7 +69,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Hero layout */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center py-2 lg:py-16">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-10 items-center py-1 lg:py-2">
           {/* Left Text */}
           <motion.div
             className="space-y-4 sm:space-y-6 origin-left"

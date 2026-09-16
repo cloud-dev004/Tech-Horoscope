@@ -380,7 +380,7 @@ const FeaturedProjects = () => {
         height: "calc(100dvh - 4rem)",
         minHeight: "calc(100svh - 4rem)",
         overflow: "hidden",
-        background: "var(--bg)",
+        background: "transparent",
         display: "flex",
         flexDirection: "column",
         userSelect: "none",

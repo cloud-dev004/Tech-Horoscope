@@ -1,14 +1,12 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Moon, Sun, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import CoverSection from "./CoverSection";
 import Footer from "./Footer";
 
 const Layout = () => {
   const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
 
   useEffect(() => {
     if (darkMode) {
@@ -26,11 +24,11 @@ const Layout = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
+    <div className="min-h-screen flex flex-col overflow-x-hidden w-full relative z-10">
 
 
       {/* Navbar */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--color-primary)] shadow-[0_4px_20px_rgba(197, 163, 255,0.5),0_1px_8px_rgba(197, 163, 255,0.8)] transition-all duration-300">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--color-primary)] shadow-[0_4px_20px_rgba(197, 163, 255,0.5),0_1px_8px_rgba(197, 163, 255,0.8)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             {/* Logo */}
@@ -108,8 +106,8 @@ const Layout = () => {
         )}
       </nav>
 
-      {/* Main Content — no max-width, sections handle their own layout */}
-      <main className="flex-grow w-full">
+      {/* Main Content — offset by navbar height (pt-16) */}
+      <main className="flex-grow w-full pt-16">
         <Outlet />
       </main>
 

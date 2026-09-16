@@ -6,9 +6,12 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
+import StarfieldBackground from "./components/StarfieldBackground";
+
 function App() {
   return (
     <Router>
+      <StarfieldBackground />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

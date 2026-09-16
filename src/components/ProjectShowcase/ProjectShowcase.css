@@ -10,7 +10,7 @@
   min-height: calc(100dvh - 4rem);
   overflow-x: hidden;
   overflow-y: visible;
-  background: var(--bg);
+  background: transparent;
   display: flex;
   flex-direction: column;
   user-select: none;

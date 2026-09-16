@@ -198,7 +198,7 @@ const HomeAbout = () => {
     <section
       ref={sectionRef}
       id="about-preview"
-      className="relative w-full py-[clamp(4rem,10vw,8rem)] overflow-hidden"
+      className="relative w-full pt-4 pb-[clamp(4rem,10vw,8rem)] overflow-hidden"
     >
       {/* ── Section background glows ── */}
       <div
@@ -225,7 +225,7 @@ const HomeAbout = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-[clamp(3rem,8vw,6rem)]">
         {/* ── TOP: Portrait (left) + Text (right) ── */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
           {/* Left — Profile Image (scroll-driven) */}
           <motion.div
             style={{ opacity: portraitOpacity, x: portraitX }}
@@ -235,13 +235,13 @@ const HomeAbout = () => {
               {/* Image with parallax */}
               <motion.div
                 style={{ y: imgY }}
-                className="relative aspect-[9/16]"
+                className="relative aspect-[3/4]"
               >
                 <img
                   src={profileScrolledImg}
                   alt="Peratchi Manikandan — Full-Stack Developer"
-                  width={1025}
-                  height={1537}
+                  width={945}
+                  height={1260}
                   className="w-full h-full object-contain"
                 />
               </motion.div>

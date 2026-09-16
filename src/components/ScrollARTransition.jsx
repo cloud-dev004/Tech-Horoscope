@@ -78,7 +78,7 @@ const ScrollARTransition = () => {
     <div
       ref={ref}
       className="relative w-full overflow-hidden pointer-events-none select-none flex items-center justify-center"
-      style={{ height: "180px" }}
+      style={{ height: "20px" }}
       aria-hidden="true"
     >
       {/* ── Parallax Glow Orb — Orange ── */}
