@@ -5,11 +5,33 @@ import ProjectModal from "./ProjectModal";
 import "./ProjectShowcase.css";
 import Uyir from "../../assets/Uyir.webp";
 import stocksense from "../../assets/stocksense.webp";
+import MockVoice from "../../assets/Mockvoice.svg"
+
 
 /* ─────────────────────────── DATA ─────────────────────────── */
 const PROJECTS = [
+  
   {
-    id: 1,
+  id: 1,
+  title: "Mockvoice",
+  description: "AI-powered mock interview platform designed to help candidates practice speaking, analyze their responses, and improve interview performance.",
+  image: MockVoice,
+  imgWidth: 1534,
+  imgHeight: 897,
+  tags: [
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "FastAPI",
+    "Faster-Whisper",
+    "AI"
+  ],
+  liveUrl: "#",
+  githubUrl: "YOUR_GITHUB_URL",
+},
+{
+    id: 2,
     title: "StockSense",
     description: "Cloud-Based Smart Inventory Management System",
     image: stocksense,
@@ -20,7 +42,7 @@ const PROJECTS = [
     githubUrl: "https://github.com/cloud-dev004/Stocksense",
   },
   {
-    id: 2,
+    id: 3,
     title: "Uyir",
     description:
       "Connecting communities to rescue, track, and care for animals through one digital platform.",
@@ -32,7 +54,7 @@ const PROJECTS = [
     githubUrl: "https://github.com/cloud-dev004/uyir-animal-rescue-system",
   },
   {
-    id: 3,
+    id: 4,
     title: "LocalLens",
     description:
       "Helping users discover nearby businesses and essential services through a location-aware digital platform.",
