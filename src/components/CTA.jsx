@@ -39,15 +39,10 @@ const CTA = () => {
             fontFamily: "var(--font-heading)",
           }}
         >
-          LET'S BUILD SOMETHING
+          Let's build something
           <br />
-          <span
-            className="text-transparent bg-clip-text"
-            style={{
-              backgroundImage: "linear-gradient(135deg, #C5A3FF, #DCCBFF)",
-            }}
-          >
-            AMAZING
+          <span className="text-[var(--color-primary)]">
+            amazing
           </span>
         </h2>
 
@@ -62,7 +57,7 @@ const CTA = () => {
             to="/contact"
             className="group inline-flex items-center justify-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[#FFF9FA] px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(197, 163, 255,0.25)] hover:shadow-[0_0_30px_rgba(197, 163, 255,0.45)] active:scale-95 min-h-[50px] min-w-[180px] tracking-wide text-sm"
           >
-            START A PROJECT
+            Start a Project
             <ArrowRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"

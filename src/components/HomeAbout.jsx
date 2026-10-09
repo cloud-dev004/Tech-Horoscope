@@ -15,7 +15,7 @@ import { ArrowRight, Layers, User } from "lucide-react";
 const cards = [
   {
     id: "who",
-    tag: "SYS.PROFILE",
+    tag: "PROFILE",
     icon: User,
     iconColor: "#C5A3FF",
     title: "Who I Am",
@@ -25,7 +25,7 @@ const cards = [
   },
   {
     id: "what",
-    tag: "SYS.MISSION",
+    tag: "MISSION",
     icon: Layers,
     iconColor: "#06b6d4",
     title: "What I Do",
@@ -62,19 +62,7 @@ const GlassCard = ({ card }) => {
       }}
       className="relative group rounded-2xl p-[1px] overflow-hidden"
     >
-      {/* Hover scan-line overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden z-10"
-        aria-hidden="true"
-      >
-        <div
-          className="absolute top-0 left-0 right-0 h-full"
-          style={{
-            background:
-              "repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px)",
-          }}
-        />
-      </div>
+
 
       {/* Card inner */}
       <div
@@ -97,10 +85,7 @@ const GlassCard = ({ card }) => {
           >
             <Icon size={20} style={{ color: card.accentFrom }} />
           </div>
-          <h3
-            className="text-lg font-bold"
-            style={{ fontFamily: "'Cinzel', serif" }}
-          >
+          <h3 className="text-lg font-bold text-[var(--text-primary)]">
             {card.title}
           </h3>
         </div>

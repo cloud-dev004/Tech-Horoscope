@@ -16,10 +16,10 @@ const Hero = () => {
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const glowOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
-  const portraitY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, -30]);
 
   const textScale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -20]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
   const textBlur = useTransform(
     scrollYProgress,
@@ -82,7 +82,7 @@ const Hero = () => {
           >
             <div className="space-y-2 sm:space-y-4">
               <motion.p
-                className="text-[var(--color-primary)] font-semibold tracking-widest uppercase text-xs sm:text-sm"
+                className="text-[var(--color-primary)] font-semibold text-xs sm:text-sm"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -96,7 +96,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.68, ease: "easeOut" }}
               >
                 Learning{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent)]">
+                <span className="text-[var(--color-primary)]">
                   Building
                 </span>{" "}
                 Shipping

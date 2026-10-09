@@ -69,7 +69,7 @@ const Footer = () => {
           >
             <Link
               to="/"
-              className="text-2xl font-bold font-heading text-[var(--color-primary)] tracking-wide"
+              className="text-2xl font-bold font-heading text-[var(--color-primary)]"
             >
               Manikandan
             </Link>
@@ -85,7 +85,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="flex flex-col items-center md:items-start"
           >
-            <h4 className="text-[var(--text-primary)] font-heading font-semibold tracking-wider mb-6 text-sm uppercase">
+            <h4 className="text-[var(--text-primary)] font-heading font-semibold mb-6 text-sm">
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-x-12 gap-y-3">
@@ -103,7 +103,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col items-center md:items-end"
           >
-            <h4 className="text-[var(--text-primary)] font-heading font-semibold tracking-wider mb-6 text-sm uppercase">
+            <h4 className="text-[var(--text-primary)] font-heading font-semibold mb-6 text-sm">
               Connect
             </h4>
             <div className="flex gap-4">
@@ -128,7 +128,7 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-secondary)] font-medium tracking-wide"
+          className="pt-8 border-t border-[rgba(255,255,255,0.06)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-secondary)] font-medium"
         >
 
           <p>

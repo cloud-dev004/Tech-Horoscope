@@ -133,10 +133,8 @@ const ProjectShowcase = () => {
               <span
                 style={{
                   color: "var(--color-primary)",
-                  fontWeight: 300,
-                  letterSpacing: "0.25em",
-                  textTransform: "uppercase",
-                  fontSize: "0.7rem",
+                  fontWeight: 500,
+                  fontSize: "0.75rem",
                 }}
               >
                 Featured Projects
@@ -160,7 +158,7 @@ const ProjectShowcase = () => {
                 lineHeight: 1.1,
               }}
             >
-              MY RECENT WORK
+              My Recent Work
             </h2>
 
             <p
