@@ -3,70 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import "./ProjectShowcase.css";
-import Uyir from "../../assets/Uyir.webp";
-import stocksense from "../../assets/stocksense.webp";
-import MockVoice from "../../assets/Mockvoice.svg"
-
-
-/* ─────────────────────────── DATA ─────────────────────────── */
-const PROJECTS = [
-  
-  {
-  id: 1,
-  title: "Mockvoice",
-  description: "AI-powered mock interview platform designed to help candidates practice speaking, analyze their responses, and improve interview performance.",
-  image: MockVoice,
-  imgWidth: 1534,
-  imgHeight: 897,
-  tags: [
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "FastAPI",
-    "Faster-Whisper",
-    "AI"
-  ],
-  liveUrl: "#",
-  githubUrl: "YOUR_GITHUB_URL",
-},
-{
-    id: 2,
-    title: "StockSense",
-    description: "Cloud-Based Smart Inventory Management System",
-    image: stocksense,
-    imgWidth: 1534,
-    imgHeight: 897,
-    tags: ["React", "Flask", "MySQL", "AWS", "REST API", "AWS RDS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/cloud-dev004/Stocksense",
-  },
-  {
-    id: 3,
-    title: "Uyir",
-    description:
-      "Connecting communities to rescue, track, and care for animals through one digital platform.",
-    image: Uyir,
-    imgWidth: 1897,
-    imgHeight: 900,
-    tags: ["React.js", "MongoDB", "Express.js", "Node.js"],
-    liveUrl: "https://uyir-animal-rescue-platform.netlify.app/",
-    githubUrl: "https://github.com/cloud-dev004/uyir-animal-rescue-system",
-  },
-  {
-    id: 4,
-    title: "LocalLens",
-    description:
-      "Helping users discover nearby businesses and essential services through a location-aware digital platform.",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1400&auto=format&fit=crop",
-    imgWidth: 1400,
-    imgHeight: 933,
-    tags: ["JS", "HTML", "CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/cloud-dev004/locallens",
-  },
-];
+import { projects as PROJECTS } from "../../data/projects";
 
 /* ─────────────────────────── COMPONENT ─────────────────────────── */
 const ProjectShowcase = () => {
@@ -196,10 +133,8 @@ const ProjectShowcase = () => {
               <span
                 style={{
                   color: "var(--color-primary)",
-                  fontWeight: 300,
-                  letterSpacing: "0.25em",
-                  textTransform: "uppercase",
-                  fontSize: "0.7rem",
+                  fontWeight: 500,
+                  fontSize: "0.75rem",
                 }}
               >
                 Featured Projects
@@ -223,7 +158,7 @@ const ProjectShowcase = () => {
                 lineHeight: 1.1,
               }}
             >
-              MY RECENT WORK
+              My Recent Work
             </h2>
 
             <p

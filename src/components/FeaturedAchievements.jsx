@@ -105,7 +105,7 @@ const AchievementCard = ({ item, index }) => {
           <Counter to={item.value} suffix={item.suffix} />
         </h3>
 
-        <p className="text-[var(--text-label)] text-sm tracking-widest uppercase mt-2 font-mono">
+        <p className="text-[var(--text-label)] text-sm mt-2 font-mono">
           {item.label}
         </p>
       </div>
@@ -121,7 +121,7 @@ const FeaturedAchievements = () => {
         <div className="flex flex-col items-center text-center gap-[0.4rem]">
           <div className="flex items-center gap-3">
             <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
-            <span className="text-[var(--text-label)] font-light tracking-[0.3em] uppercase text-[0.68rem]">
+            <span className="text-[var(--color-primary)] font-medium text-xs">
               Featured Achievements
             </span>
             <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
@@ -134,7 +134,7 @@ const FeaturedAchievements = () => {
               fontFamily: "var(--font-heading)",
             }}
           >
-            BY THE NUMBERS
+            By the Numbers
           </h2>
 
           <p className="text-[var(--text-secondary)] font-light text-[clamp(0.85rem,1.5vw,1.05rem)] max-w-2xl mx-auto leading-relaxed whitespace-pre-line">

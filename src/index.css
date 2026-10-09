@@ -20,18 +20,13 @@
   --color-text-light-primary: #18181b;
   --color-text-light-secondary: #52525b;
 
-  --font-heading: "Cinzel", serif;
-  --font-body: "system-ui", -apple-system, sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
-  :root {
-    --bg: var(--color-bg-light);
-    --surface: var(--color-surface-light);
-    --text-primary: var(--color-text-light-primary);
-    --text-secondary: var(--color-text-light-secondary);
-  }
-
+  :root,
   .dark {
     --bg: var(--color-bg-dark);
     --surface: var(--color-surface-dark);
@@ -40,6 +35,7 @@
     --text-label: var(--color-text-dark-label);
     --text-muted: var(--color-text-dark-muted);
     --text-tech: var(--color-text-dark-tech);
+    color-scheme: dark;
   }
 
   html {

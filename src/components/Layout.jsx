@@ -1,32 +1,23 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Footer from "./Footer";
 
 const Layout = () => {
-  const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+    document.documentElement.classList.add("dark");
+  }, []);
 
   // Reset scroll to top on path change (prevents sticky scroll state across pages)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const toggleTheme = () => setDarkMode(!darkMode);
-
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden w-full relative z-10">
-
-
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--color-primary)] shadow-[0_4px_20px_rgba(197, 163, 255,0.5),0_1px_8px_rgba(197, 163, 255,0.8)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,32 +34,32 @@ const Layout = () => {
             <div className="hidden md:flex space-x-8 items-center">
               <Link
                 to="/about"
-                className="text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`transition-colors font-medium text-sm ${location.pathname === "/about" ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
               >
                 About
               </Link>
               
               <Link
+                to="/projects"
+                className={`transition-colors font-medium text-sm ${location.pathname.startsWith("/projects") ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
+              >
+                Projects
+              </Link>
+
+              <Link
                 to="/contact"
-                className="text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`transition-colors font-medium text-sm ${location.pathname === "/contact" ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
               >
                 Contact
               </Link>
-             
             </div>
 
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center gap-4">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-[var(--surface)] hover:text-[var(--color-orange)] transition-colors"
-                aria-label="Toggle theme"
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
+            <div className="md:hidden flex items-center gap-3">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-[var(--text-primary)]"
+                className="p-2 text-[var(--text-primary)] cursor-pointer"
+                aria-label="Toggle navigation menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -78,26 +69,26 @@ const Layout = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[var(--surface)] absolute w-full left-0 border-b border-white/10">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="md:hidden bg-[var(--surface)] absolute w-full left-0 border-b border-white/10 shadow-lg">
+            <div className="px-3 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                 to="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname === "/about" ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 About
               </Link>
               <Link
                 to="/projects"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname.startsWith("/projects") ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 Projects
               </Link>
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname === "/contact" ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 Contact
               </Link>

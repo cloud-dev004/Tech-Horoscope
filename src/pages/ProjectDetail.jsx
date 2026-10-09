@@ -2,41 +2,11 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Code } from "lucide-react";
 
-const projectData = {
-  "ecommerce-platform": {
-    title: "E-Commerce Platform",
-    category: "Full-stack",
-    year: "2025",
-    role: "Lead Developer",
-    description:
-      "A comprehensive full-stack e-commerce solution built to handle high volume traffic with seamless checkout flows.",
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1200&auto=format&fit=crop",
-    challenge:
-      "The client needed a scalable architecture that could handle flash sales without downtime while maintaining a sub-second initial load time.",
-    solution:
-      "Implemented a headless architecture using Next.js with ISR (Incremental Static Regeneration). Integrated Stripe for payment processing and a custom Node.js microservice for inventory management during high-demand periods.",
-    outcome:
-      "Achieved a 99 Lighthouse performance score. Conversion rates increased by 40% in the first quarter post-launch.",
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Stripe",
-      "Node.js",
-      "Redis",
-    ],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-};
+import { projectMap, projects } from "../data/projects";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
-
-  // In a real app, you would fetch data from backend based on slug
-  // Using dummy data for the first project as an example
-  const project = projectData[slug] || projectData["ecommerce-platform"];
+  const project = projectMap[slug] || projects[0];
 
   return (
     <div className="py-8">
@@ -97,19 +67,31 @@ const ProjectDetail = () => {
             <h4 className="text-sm text-[var(--text-label)] mb-1">Year</h4>
             <p className="font-medium">{project.year}</p>
           </div>
-          <div className="flex gap-4 pt-2">
-            <a
-              href={project.demoUrl}
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-[#FFF9FA] rounded-full text-sm hover:bg-[var(--color-primary-hover)] transition-colors"
-            >
-              <ExternalLink size={16} /> Live Demo
-            </a>
-            <a
-              href={project.githubUrl}
-              className="flex items-center gap-2 px-4 py-2 bg-[var(--bg)] border border-white/10 rounded-full text-sm hover:border-[var(--text-secondary)] transition-colors"
-            >
-              <Code size={16} /> Code
-            </a>
+          <div className="flex flex-wrap gap-3 pt-2">
+            {project.demoUrl && project.demoUrl !== "#" ? (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--color-primary)] text-[#FFF9FA] rounded-full text-sm hover:bg-[var(--color-primary-hover)] transition-colors"
+              >
+                <ExternalLink size={16} /> Live Demo
+              </a>
+            ) : (
+              <span className="flex items-center gap-2 px-4 py-2 bg-[var(--surface)] text-[var(--text-secondary)] border border-white/5 rounded-full text-sm cursor-not-allowed opacity-75">
+                <ExternalLink size={16} /> In Development
+              </span>
+            )}
+            {project.githubUrl && project.githubUrl !== "#" && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-[var(--bg)] border border-white/10 rounded-full text-sm hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+              >
+                <Code size={16} /> Source Code
+              </a>
+            )}
           </div>
         </motion.div>
       </div>

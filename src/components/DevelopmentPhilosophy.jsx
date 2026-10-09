@@ -103,7 +103,7 @@ const PhilosophyCard = ({ item }) => {
           >
             <Icon size={24} style={{ color: "#C5A3FF" }} />
           </motion.div>
-          <span className="font-mono text-sm tracking-widest text-[var(--text-secondary)] opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+          <span className="font-mono text-sm text-[var(--text-secondary)] opacity-50 group-hover:opacity-100 transition-opacity duration-300">
             {item.id}
           </span>
         </div>
@@ -146,7 +146,7 @@ const DevelopmentPhilosophy = () => {
         <div className="flex flex-col items-center text-center gap-[0.4rem]">
           <div className="flex items-center gap-3">
             <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
-            <span className="text-[var(--text-label)] font-light tracking-[0.3em] uppercase text-[0.68rem]">
+            <span className="text-[var(--color-primary)] font-medium text-xs">
               Development Philosophy
             </span>
             <div className="h-[1px] w-[clamp(18px,3vw,48px)] bg-[rgba(197, 163, 255,0.5)]" />
@@ -159,7 +159,7 @@ const DevelopmentPhilosophy = () => {
               fontFamily: "var(--font-heading)",
             }}
           >
-            HOW I BUILD
+            How I Build
           </h2>
 
           <p className="text-[var(--text-secondary)] font-light text-[clamp(0.85rem,1.5vw,1.05rem)] max-w-2xl mx-auto leading-relaxed whitespace-pre-line">

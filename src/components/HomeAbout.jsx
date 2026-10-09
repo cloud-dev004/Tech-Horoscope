@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ArrowRight, Layers, User } from "lucide-react";
-import profileScrolledImg from "../assets/profile7.webp";
 
 /* ─────────────────────────────────────────────────────────── */
 /*  DATA                                                       */
@@ -16,7 +15,7 @@ import profileScrolledImg from "../assets/profile7.webp";
 const cards = [
   {
     id: "who",
-    tag: "SYS.PROFILE",
+    tag: "PROFILE",
     icon: User,
     iconColor: "#C5A3FF",
     title: "Who I Am",
@@ -26,7 +25,7 @@ const cards = [
   },
   {
     id: "what",
-    tag: "SYS.MISSION",
+    tag: "MISSION",
     icon: Layers,
     iconColor: "#06b6d4",
     title: "What I Do",
@@ -63,19 +62,7 @@ const GlassCard = ({ card }) => {
       }}
       className="relative group rounded-2xl p-[1px] overflow-hidden"
     >
-      {/* Hover scan-line overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden z-10"
-        aria-hidden="true"
-      >
-        <div
-          className="absolute top-0 left-0 right-0 h-full"
-          style={{
-            background:
-              "repeating-linear-gradient(to bottom, transparent 0px, transparent 3px, rgba(255,255,255,0.015) 3px, rgba(255,255,255,0.015) 4px)",
-          }}
-        />
-      </div>
+
 
       {/* Card inner */}
       <div
@@ -98,10 +85,7 @@ const GlassCard = ({ card }) => {
           >
             <Icon size={20} style={{ color: card.accentFrom }} />
           </div>
-          <h3
-            className="text-lg font-bold"
-            style={{ fontFamily: "'Cinzel', serif" }}
-          >
+          <h3 className="text-lg font-bold text-[var(--text-primary)]">
             {card.title}
           </h3>
         </div>
@@ -171,34 +155,19 @@ const HomeAbout = () => {
 
   const prefersReducedMotion = useReducedMotion();
 
-  // Parallax on profile image (uses its own full range)
-  const imgY = useTransform(
+  // Scroll-driven entrance for narrative header
+  const textOpacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const textY = useTransform(
     scrollYProgress,
-    [0, 1],
-    prefersReducedMotion ? ["0%", "0%"] : ["-4%", "4%"],
-  );
-
-  // Scroll-driven entrance — portrait slides in from the left
-  const portraitOpacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
-  const portraitX = useTransform(
-    scrollYProgress,
-    [0, 0.6],
-    prefersReducedMotion ? [0, 0] : [-40, 0],
-  );
-
-  // Scroll-driven entrance — text slides in from the right, slightly delayed
-  const textOpacity = useTransform(scrollYProgress, [0.1, 0.75], [0, 1]);
-  const textX = useTransform(
-    scrollYProgress,
-    [0.1, 0.75],
-    prefersReducedMotion ? [0, 0] : [40, 0],
+    [0, 0.4],
+    prefersReducedMotion ? [0, 0] : [24, 0],
   );
 
   return (
     <section
       ref={sectionRef}
       id="about-preview"
-      className="relative w-full pt-4 pb-[clamp(4rem,10vw,8rem)] overflow-hidden"
+      className="relative w-full pt-8 pb-[clamp(4rem,10vw,8rem)] overflow-hidden"
     >
       {/* ── Section background glows ── */}
       <div
@@ -206,89 +175,45 @@ const HomeAbout = () => {
         aria-hidden="true"
       >
         <div
-          className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-40"
+          className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, rgba(197, 163, 255,0.07) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(197, 163, 255,0.06) 0%, transparent 65%)",
             filter: "blur(40px)",
           }}
         />
         <div
-          className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full opacity-40"
+          className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full opacity-30"
           style={{
             background:
-              "radial-gradient(circle, rgba(6,182,212,0.07) 0%, transparent 65%)",
+              "radial-gradient(circle, rgba(6,182,212,0.06) 0%, transparent 65%)",
             filter: "blur(35px)",
           }}
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-[clamp(3rem,8vw,6rem)]">
-        {/* ── TOP: Portrait (left) + Text (right) ── */}
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          {/* Left — Profile Image (scroll-driven) */}
-          <motion.div
-            style={{ opacity: portraitOpacity, x: portraitX }}
-            className="flex justify-center lg:justify-start"
-          >
-            <div className="relative w-80 sm:w-96 md:w-[26rem]">
-              {/* Image with parallax */}
-              <motion.div
-                style={{ y: imgY }}
-                className="relative aspect-[3/4]"
-              >
-                <img
-                  src={profileScrolledImg}
-                  alt="Peratchi Manikandan — Full-Stack Developer"
-                  width={945}
-                  height={1260}
-                  className="w-full h-full object-contain"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+        {/* ── TOP: Developer Statement & Story Link ── */}
+        <motion.div
+          style={{ opacity: textOpacity, y: textY }}
+          className="max-w-3xl space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface)] border border-white/5 text-xs text-[var(--color-primary)] font-medium">
+            About Mani
+          </div>
 
-          {/* Right — Text (scroll-driven) */}
-          <motion.div
-            style={{ opacity: textOpacity, x: textX }}
-            className="space-y-6"
-          >
-            <h2
-              className="font-black leading-[1.08]"
-              style={{
-                fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-                fontFamily: "'Cinzel', serif",
-              }}
-            >
-              Hello, I'm{" "}
-              <span
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #C5A3FF, #DCCBFF)",
-                }}
-              >
-                Peratchi
-              </span>
-              <br />
-              <span
-                className="text-transparent bg-clip-text"
-                style={{
-                  backgroundImage: "linear-gradient(135deg, #06b6d4, #22d3ee)",
-                }}
-              >
-                Manikandan
-              </span>
-            </h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-[var(--text-primary)]">
+            Turning ideas into scalable, real-world software.
+          </h2>
 
-            <p className="text-xs md:text-sm leading-relaxed tracking-widest text-[var(--text-secondary)] max-w-lg">
-              I like taking an idea, breaking it down, writing the code, and seeing it become something real.
-            </p>
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-[var(--text-secondary)]">
+            I like taking an idea, breaking it down, writing the code, and seeing it become something real. Whether architecting backend services, provisioning cloud databases, or building responsive web applications, my focus is always on reliability and clean execution.
+          </p>
 
-            {/* CTA */}
+          <div className="pt-2">
             <Link
               to="/about"
-              className="group inline-flex items-center gap-2 font-medium transition-all active:scale-95 py-2 min-h-[44px]"
-              style={{ color: "#C5A3FF" }}
+              className="group inline-flex items-center gap-2 font-medium text-sm text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] transition-colors py-2 min-h-[44px]"
             >
               <span>Read My Full Story</span>
               <ArrowRight
@@ -296,8 +221,8 @@ const HomeAbout = () => {
                 className="group-hover:translate-x-1.5 transition-transform duration-300"
               />
             </Link>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* ── GLASS CARDS GRID ── */}
         <div className="grid md:grid-cols-2 gap-6">
