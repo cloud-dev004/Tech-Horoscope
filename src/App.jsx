@@ -7,11 +7,13 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 
 import StarfieldBackground from "./components/StarfieldBackground";
+import ChatBot from "./components/chatbot/ChatBot";
 
 function App() {
   return (
     <Router>
       <StarfieldBackground />
+      <ChatBot />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

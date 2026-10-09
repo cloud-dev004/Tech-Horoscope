@@ -13,6 +13,9 @@ const lenis = new Lenis({
   autoRaf: true,
   smoothWheel: true,
   lerp: 0.08,
+  prevent: (node) =>
+    node?.hasAttribute?.("data-lenis-prevent") ||
+    Boolean(node?.closest?.("[data-lenis-prevent], .chatbot-panel")),
 });
 
 // Expose on window so Lenis can be paused/resumed by other code if ever needed.
