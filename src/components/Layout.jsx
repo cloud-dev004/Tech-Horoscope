@@ -1,32 +1,23 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Footer from "./Footer";
 
 const Layout = () => {
-  const [darkMode, setDarkMode] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+    document.documentElement.classList.add("dark");
+  }, []);
 
   // Reset scroll to top on path change (prevents sticky scroll state across pages)
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const toggleTheme = () => setDarkMode(!darkMode);
-
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden w-full relative z-10">
-
-
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[var(--bg)]/80 border-b border-[var(--color-primary)] shadow-[0_4px_20px_rgba(197, 163, 255,0.5),0_1px_8px_rgba(197, 163, 255,0.8)] transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,27 +52,10 @@ const Layout = () => {
               >
                 Contact
               </Link>
-
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-[var(--surface)] text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors border border-white/5 cursor-pointer"
-                aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
-                title={darkMode ? "Switch to light theme" : "Switch to dark theme"}
-              >
-                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
             </div>
 
-            {/* Mobile Menu Button & Theme Toggle */}
+            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-3">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-full bg-[var(--surface)] text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors border border-white/5 cursor-pointer"
-                aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
-                title={darkMode ? "Switch to light theme" : "Switch to dark theme"}
-              >
-                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 text-[var(--text-primary)] cursor-pointer"
