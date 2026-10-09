@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
 import { Github, Linkedin } from "./icons/SocialIcons";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -89,8 +89,9 @@ const Footer = () => {
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-x-12 gap-y-3">
+              <FooterLink to="/" label="Home" />
               <FooterLink to="/about" label="About" />
-
+              <FooterLink to="/projects" label="Projects" />
               <FooterLink to="/contact" label="Contact" />
             </div>
           </motion.div>

@@ -43,32 +43,49 @@ const Layout = () => {
             <div className="hidden md:flex space-x-8 items-center">
               <Link
                 to="/about"
-                className="text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`transition-colors font-medium text-sm ${location.pathname === "/about" ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
               >
                 About
               </Link>
               
               <Link
+                to="/projects"
+                className={`transition-colors font-medium text-sm ${location.pathname.startsWith("/projects") ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
+              >
+                Projects
+              </Link>
+
+              <Link
                 to="/contact"
-                className="text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`transition-colors font-medium text-sm ${location.pathname === "/contact" ? "text-[var(--color-primary)]" : "text-[var(--text-primary)] opacity-90 hover:text-[var(--color-primary)] hover:opacity-100"}`}
               >
                 Contact
               </Link>
-             
-            </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-full bg-[var(--surface)] hover:text-[var(--color-orange)] transition-colors"
-                aria-label="Toggle theme"
+                className="p-2 rounded-full bg-[var(--surface)] text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors border border-white/5 cursor-pointer"
+                aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+                title={darkMode ? "Switch to light theme" : "Switch to dark theme"}
               >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+            </div>
+
+            {/* Mobile Menu Button & Theme Toggle */}
+            <div className="md:hidden flex items-center gap-3">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-full bg-[var(--surface)] text-[var(--text-primary)] hover:text-[var(--color-primary)] transition-colors border border-white/5 cursor-pointer"
+                aria-label={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+                title={darkMode ? "Switch to light theme" : "Switch to dark theme"}
+              >
+                {darkMode ? <Sun size={18} /> : <Moon size={18} />}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-[var(--text-primary)]"
+                className="p-2 text-[var(--text-primary)] cursor-pointer"
+                aria-label="Toggle navigation menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -78,26 +95,26 @@ const Layout = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-[var(--surface)] absolute w-full left-0 border-b border-white/10">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="md:hidden bg-[var(--surface)] absolute w-full left-0 border-b border-white/10 shadow-lg">
+            <div className="px-3 pt-2 pb-3 space-y-1 sm:px-3">
               <Link
                 to="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname === "/about" ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 About
               </Link>
               <Link
                 to="/projects"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname.startsWith("/projects") ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 Projects
               </Link>
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-3 py-2 rounded-md text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)] hover:opacity-100 transition-all"
+                className={`block px-3 py-2 rounded-md transition-all ${location.pathname === "/contact" ? "bg-[var(--bg)] text-[var(--color-primary)] font-medium" : "text-[var(--text-primary)] opacity-90 hover:bg-[var(--bg)] hover:text-[var(--color-primary)]"}`}
               >
                 Contact
               </Link>
